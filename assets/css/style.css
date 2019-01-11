@@ -15,7 +15,7 @@ body {
     position: absolute;
     background-color: #ffffff;
 }
-
+/* homepage nav bar */
 .navbar {
     background: url("../images/sharing.jpg") no-repeat center fixed;
     padding: 340px 140px 20px 140px;
@@ -37,6 +37,12 @@ a {
     color:	#FFFFE0;
     text-decoration: none;
     filter: drop-shadow(0 0 0.75rem black);
+}
+
+/* recipe nav bar */
+.recipes {
+    background: url("../images/cookbooks.jpg") no-repeat center fixed;
+    padding: 340px 140px 20px 140px;
 }
 
 
