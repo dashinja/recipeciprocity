@@ -25,7 +25,11 @@ var config = {
 };
 firebase.initializeApp(config);
 
-$("#newRecipebtn").on("click", function (event) {
+
+var database = firebase.database();
+
+
+$("#newRecipeBtn").on("click", function (event) {
     event.preventDefault();
 
     var rTitle = $("#title-input").val().trim();
