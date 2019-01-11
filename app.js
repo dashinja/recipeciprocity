@@ -25,6 +25,32 @@ var config = {
 };
 firebase.initializeApp(config);
 
+// Event listener for search button element
+$("#searchBtn").on("click", function () {
+    
+    var schIngred = $("#searchIngredients").val().trim().toLowerCase();
+
+    // clear the searchbox
+    $("#searchIngredients").val("");
+    
+    // Construct a URL to search edamam for recipes with ingredient searched for
+    
+    var queryURL = "https://api.edamam.com/search?q=" + schIngred
+        + "&app_id=1049264d&app_key=ec17d36aa8ef8192fe452b8e3fa1ce52";
+    // Performing our AJAX GET request
+    $.ajax({
+        url: queryURL,
+        method: "GET"
+    })
+        // After the data comes back from the API
+        .then(function (response) {
+            // Storing an array of results in the results variable
+            var results = response.data;
+
+        });
+});
+
+
 $("#newRecipebtn").on("click", function (event) {
     event.preventDefault();
 
@@ -53,7 +79,7 @@ $("#newRecipebtn").on("click", function (event) {
     // $("#newImage").val("");
     $("#directions-input").val("");
     $("#notes-input").val("");
-    
+
 });
 
 // when a child is added to firebase, retrieve the info
@@ -77,3 +103,4 @@ database.ref().on("child_added", function (childSnap) {
 
     // $("#newRecipe").append(newRec);
 });
+
