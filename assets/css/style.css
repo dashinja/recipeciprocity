@@ -14,6 +14,9 @@ body {
     background: url("images/Sharing\ Food.jpg") no-repeat center fixed;
     padding: 170px;
 }
+.navbar a:hover {
+    color: black;
+  }
 a {
     color:	#bedcaa;
     text-decoration: none;
