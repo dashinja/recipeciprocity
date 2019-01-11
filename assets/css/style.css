@@ -1,0 +1,23 @@
+body {
+    background-color: darkgray
+};
+.logo {
+    color: #ffffff;
+};
+.footer {
+    bottom: 0;
+    width: 100%;
+    position: absolute;
+    background-color: #ffffff;
+}
+.navbar {
+    background: url("images/Sharing\ Food.jpg") no-repeat center fixed;
+    padding: 170px;
+}
+.navbar a:hover {
+    color: black;
+  }
+a {
+    color:	#bedcaa;
+    text-decoration: none;
+}
