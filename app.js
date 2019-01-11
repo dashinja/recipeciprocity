@@ -14,6 +14,7 @@
 // - Submit recipe button:  newRecipeBtn
 // Recipe Page:
 // Card: newRecipe 
+
 var config = {
     apiKey: "AIzaSyDDO32RIhsljwPbk3zu5WSBN2WEmEkKNF8",
     authDomain: "recipeciprocity.firebaseapp.com",
@@ -32,14 +33,15 @@ $("#newRecipebtn").on("click", function (event) {
     // var img = $("#newImage").val().trim();
     var dir = $("#directions-input").val().trim();
     var notes = $("#notes-input").val().trim();
-    // add date submitted to newRecipe object (?)
+    var recDate = moment().format('LLL');
 
     // Create local temp object
     var newRecipe = {
         Title: rTitle,
         Ingredients: ingred,
         Directions: dir,
-        Notes: notes
+        Notes: notes,
+        SubDate: recDate
     };
 
     // Uploads recipe data to firebase
