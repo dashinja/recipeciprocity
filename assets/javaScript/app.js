@@ -90,7 +90,7 @@ database.ref().on('child_added', function(childSnap) {
   var recNotes = childSnap.val().Notes;
   var rec_date = childSnap.val().SubDate;
   var recUser = childSnap.val().User;
-  var recEmail = childSnap.val.Email;
+  var recEmail = childSnap.val().Email;
   // var newRec
   // // Create the new Recipe card
   // // newRec = $("<tr>").append(
