@@ -64,16 +64,16 @@ database.ref().on("child_added", function (childSnap) {
     var recTitle = childSnap.val().Title;
     var recIngred = childSnap.val().Ingredients;
     var recDirec = childSnap.val().Directions;
-    var recNotes = childSnap.val().Notes
+    var recNotes = childSnap.val().Notes;
+    var rec_date = childSnap.val().SubDate;
+    // var newRec
+    // // Create the new Recipe card
+    // // newRec = $("<tr>").append(
+    // //     $("<td>").text(recTitle),
+    // //     $("<td>").text(recIngred),
+    // //     $("<td>").text(recDirec),
+    // //     $("<td>").text(recNotes),
+    // // );
 
-    var newRec
-    // Create the new Recipe card
-    // newRec = $("<tr>").append(
-    //     $("<td>").text(recTitle),
-    //     $("<td>").text(recIngred),
-    //     $("<td>").text(recDirec),
-    //     $("<td>").text(recNotes),
-    // );
-
-    $("#newRecipe").append(newRec);
+    // $("#newRecipe").append(newRec);
 });
