@@ -25,7 +25,9 @@ var config = {
 };
 firebase.initializeApp(config);
 
+
 var database = firebase.database();
+
 
 $("#newRecipebtn").on("click", function (event) {
     event.preventDefault();
