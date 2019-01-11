@@ -1,23 +1,32 @@
 body {
     background-color: darkgray
-};
+}
+
 .logo {
-    color: #ffffff;
-};
+    color: 	#bedcaa;
+    filter: drop-shadow(0 0 0.75rem black);
+}
+
 .footer {
     bottom: 0;
     width: 100%;
     position: absolute;
     background-color: #ffffff;
 }
+
 .navbar {
-    background: url("images/Sharing\ Food.jpg") no-repeat center fixed;
-    padding: 170px;
+    background: url("../images/sharing.jpg") no-repeat center fixed;
+    padding: 340px 140px 20px 140px;
 }
+
 .navbar a:hover {
     color: black;
   }
+
 a {
     color:	#bedcaa;
     text-decoration: none;
+    filter: drop-shadow(0 0 0.75rem black);
 }
+
+
