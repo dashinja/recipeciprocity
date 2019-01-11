@@ -11,7 +11,10 @@
       href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
     />
     <!--fonts-->
-    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css?family=Permanent+Marker"
+      rel="stylesheet"
+    />
     <!--Favicon-->
     <link rel="icon" type="image/ico" href="assets/images/book.ico" />
     <!-- Reset stylesheet -->
@@ -20,16 +23,16 @@
     <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
     <!-- Firebase -->
     <script src="https://www.gstatic.com/firebasejs/5.7.2/firebase.js"></script>
-
-</head>
-
+  </head>
 
   <body>
     <!-- navBar as a link-->
     <header id="masthead">
       <nav class="navbar submissions bg-transparent navbar-sticky-top">
         <div class="container-fluid">
-          <a class="navbar-brand logo" href="index.html">Recipeciprocity&copy;</a>
+          <a class="navbar-brand logo" href="index.html"
+            >Recipeciprocity&copy;</a
+          >
 
           <div class="navbar-header">
             <button
@@ -60,45 +63,44 @@
 
     <!-- recipe card -->
     <div class="container submissionForm">
-    <main class="w-100">
-      <!--Recipe Form Input-->
-      <div class="form-holder">
-        <form>
-          <!--Title-->
-          <div class="form-group">
-            <label for="title-input">Title</label>
-            <input type="text" class="form-control" id="title-input" />
-          </div>
-          <!--Ingredients-->
-          <div class="form-group">
-            <label for="ingredients-input">Ingredients</label>
-            <input type="text" class="form-control" id="ingredients-input" />
-          </div>
-          <!--Directions-->
-          <div class="form-group">
-            <label for="directions-input">Directions</label>
-            <input type="text" class="form-control" id="directions-input" />
-          </div>
-          <!--Notes-->
-          <div class="form-group">
-            <label for="notes-input">Title</label>
-            <input type="text" class="form-control" id="notes-input" />
-          </div>
-          <button id="newRecipeBtn">Submit</button>
-        </form>
-      </div>
-    </main>
-</div>
+      <main class="w-100">
+        <!--Recipe Form Input-->
+        <div class="form-holder">
+          <form>
+            <!--Title-->
+            <div class="form-group">
+              <label for="title-input">Title</label>
+              <input type="text" class="form-control" id="title-input" />
+            </div>
+            <!--Ingredients-->
+            <div class="form-group">
+              <label for="ingredients-input">Ingredients</label>
+              <input type="text" class="form-control" id="ingredients-input" />
+            </div>
+            <!--Directions-->
+            <div class="form-group">
+              <label for="directions-input">Directions</label>
+              <input type="text" class="form-control" id="directions-input" />
+            </div>
+            <!--Notes-->
+            <div class="form-group">
+              <label for="notes-input">Notes</label>
+              <input type="text" class="form-control" id="notes-input" />
+            </div>
+            <button id="newRecipeBtn">Submit</button>
+          </form>
+        </div>
+      </main>
+    </div>
 
     <!-- Footer -->
     <footer class="footer fixed-bottom">
-            <div>
-                <a href="https://github.com/dashinja">Miller</a>
-                <a href="https://github.com/smentzer">Mentzer</a>
-                <a href="https://github.com/danieljudsonblair">Blair</a> &copy;
-            </div>
-        </footer>
-    
+      <div>
+        <a href="https://github.com/dashinja">Miller</a>
+        <a href="https://github.com/smentzer">Mentzer</a>
+        <a href="https://github.com/danieljudsonblair">Blair</a> &copy;
+      </div>
+    </footer>
 
     <!-- jQuery-->
     <script
