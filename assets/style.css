@@ -10,7 +10,11 @@ body {
     position: absolute;
     background-color: #ffffff;
 }
-.jumbotron {
+.navbar {
     background: url("images/Sharing\ Food.jpg") no-repeat center fixed;
     padding: 170px;
+}
+a {
+    color:	#bedcaa;
+    text-decoration: none;
 }
