@@ -44,5 +44,8 @@ a {
     background: url("../images/cookbooks.jpg") no-repeat center fixed;
     padding: 340px 140px 20px 140px;
 }
-
+.submissionForm {
+    padding-top: 20px;
+    padding-bottom: 40px;
+}
 
