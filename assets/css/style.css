@@ -1,11 +1,12 @@
 body {
     background-color: darkgray;
-    font-family: 'Bad Script', cursive;
+    font-family: 'Permanent Marker', cursive;
 }
 
 .logo {
-    color: 	#bedcaa;
+    color: 	#FFFFE0;
     filter: drop-shadow(0 0 0.75rem black);
+    font-size: 30px;
 }
 
 .footer {
@@ -14,20 +15,34 @@ body {
     position: absolute;
     background-color: #ffffff;
 }
-
+/* homepage nav bar */
 .navbar {
     background: url("../images/sharing.jpg") no-repeat center fixed;
     padding: 340px 140px 20px 140px;
 }
+.nav {
+    font-size: 30px; 
+    filter: drop-shadow(0 0 0.75rem black);
+}
 
 .navbar a:hover {
-    color: black;
+    color: 	#bedcaa;
   }
 
+.nav > li > a:hover{
+    background: transparent;
+}
+
 a {
-    color:	#bedcaa;
+    color:	#FFFFE0;
     text-decoration: none;
     filter: drop-shadow(0 0 0.75rem black);
+}
+
+/* recipe nav bar */
+.recipes {
+    background: url("../images/cookbooks.jpg") no-repeat center fixed;
+    padding: 340px 140px 20px 140px;
 }
 
 
