@@ -7,13 +7,14 @@ body {
     color: 	#FFFFE0;
     filter: drop-shadow(0 0 0.75rem black);
     font-size: 30px;
+   
 }
 
 .footer {
     bottom: 0;
     width: 100%;
     position: absolute;
-    background-color: #ffffff;
+    background: transparent;
 }
 /* homepage nav bar */
 .navbar {
