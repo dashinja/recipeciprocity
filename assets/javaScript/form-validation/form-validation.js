@@ -11,7 +11,7 @@ firebase.initializeApp(config);
 var database = firebase.database();
 
 
-$('#newRecipeBtn').on('click', function(event) {
+$('#newRecipeBtn').on('click', function (event) {
   event.preventDefault();
 
   var rTitle = $('#title-input')
@@ -61,7 +61,27 @@ $('#newRecipeBtn').on('click', function(event) {
   $('#email-input').val('');
 });
 
+
 // Form Validation Activator
 $.validate({
   lang: 'en'
 });
+
+
+
+
+
+
+
+        // for (let j = 0; j < results.length; j++) {
+      //   var celebDiv = $("<div>");
+      //   celebDiv.addClass("col-lg col-lg-m-1");
+      //   var p = $("<p>").text("Rating: " + results[j].rating);
+      //   celebImage = $("<img>");
+      //   celebImage.attr("src", results[j].images.fixed_height_still.url);
+      //   celebImage.attr("data-still", results[j].images.fixed_height_still.url);
+      //   celebImage.attr("data-animate", results[j].images.fixed_height.url);
+      //   celebImage.attr("data-state", "still");
+      //   celebDiv.append(celebImage);
+      //   celebDiv.append(p);
+      //   $(".gif-tainer").prepend(celebDiv);

@@ -74,10 +74,56 @@ database.ref().on('child_added', function(childSnap) {
 </div>
   `);
 
-
   newRec.prepend(recipeCard);
+});
+
+// Edamam Search
+// on click listener for search button (index page)
+$('#schEda').on('click', function() {
+  var rand = Math.floor(Math.random() * 100) + 1;
+  var randb = rand + 12;
+  var schEdaIng = $('#searchEdamam-input')
+    .val()
+    .trim()
+    .toLowerCase();
+  console.log(schEdaIng);
+  $('#searchEdamam-input').val('');
+  $('.schRes').empty();
+
+  var queryURL =
+    'https://api.edamam.com/search?q=' +
+    schEdaIng +
+    '&app_id=1049264d&app_key=ec17d36aa8ef8192fe452b8e3fa1ce52&from=' +
+    rand +
+    '&to=' +
+    randb;
+  //  reserved for later use "&from=0&to=10"
+
+  $.ajax({
+    url: queryURL,
+    method: 'GET'
+  }).then(function(response) {
+    var results = response.hits;
+    console.log(results);
+    for (let j = 0; j < results.length; j++) {
+      var recDiv = $('<div>');
+      recDiv.addClass('col-lg col-lg-m-1');
+      var p = $('<p>').text(results[j].recipe.label);
+      recImage = $('<img>');
+      recImage.attr('src', results[j].recipe.image);
+      recImage.attr('data-link', results[j].recipe.shareAs);
+      recImage.addClass('rounded');
+      recDiv.append(recImage);
+      recDiv.append(p);
+      recDiv.append($('<br><br>'));
+      $('.schRes').prepend(recDiv);
+    }
+  });
+});
+
+$('.schRes').on('click', 'img', function() {
+  window.open($(this).attr('data-link'));
 });
 
 //carousel id= scrollingImages
 // bootstrap says you can Call carousel manually with: $('.carousel').carousel()
-
