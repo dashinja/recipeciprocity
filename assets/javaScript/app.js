@@ -55,8 +55,5 @@ database.ref().on('child_added', function(childSnap) {
   // $("#newRecipe").append(newRec);
 });
 
-<<<<<<< HEAD
 //carousel id= scrollingImages
-// bootstrap say you can Call carousel manually with: $('.carousel').carousel()
-=======
->>>>>>> d1397188d1c129021efa4f828de3e7fdb0886bad
+// bootstrap says you can Call carousel manually with: $('.carousel').carousel()

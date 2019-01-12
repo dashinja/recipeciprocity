@@ -13,13 +13,17 @@ body {
 .footer {
     bottom: 0;
     width: 100%;
-    position: absolute;
+    position: relative;
     background: transparent;
+    margin-top: 100px;
+
 }
 /* homepage nav bar */
 .navbar {
     background: url("../images/sharing.jpg") no-repeat center fixed;
     padding: 340px 140px 20px 140px;
+    margin-bottom: 40px;
+    border-bottom: 1px solid #4dd0e1;
 }
 .nav {
     font-size: 30px; 
@@ -51,7 +55,11 @@ a {
 }
 
 .carousel {
-    padding-top: 40px;
-    padding-bottom: 40px;
+    border: 1px solid #4dd0e1;
 }
 
+.active-cyan-4 input {
+    border: 1px solid #4dd0e1;
+    box-shadow: 0 0 0 1px #4dd0e1;
+
+}
