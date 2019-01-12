@@ -43,6 +43,23 @@ database.ref().on('child_added', function(childSnap) {
   var rec_date = childSnap.val().SubDate;
   var recUser = childSnap.val().User;
   var recEmail = childSnap.val().Email;
+
+  let newRec = $("#newRecipe")
+  let recipeCard = $(`
+  <div class="card text-center">
+  <div class="card-header title">Title${recTitle}</div>
+  <div class="card-body">
+    <h5 class="card-title">Special title treatment</h5>
+    <p class="card-text">
+      With supporting text below as a natural lead-in to additional
+      content.
+    </p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+  <div class="card-footer text-muted">2 days ago</div>
+</div>
+</div>
+  `)
   // var newRec
   // // Create the new Recipe card
   // // newRec = $("<tr>").append(

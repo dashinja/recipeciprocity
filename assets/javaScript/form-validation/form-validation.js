@@ -10,27 +10,6 @@ firebase.initializeApp(config);
 
 var database = firebase.database();
 
-// when a child is added to firebase, retrieve the info
-database.ref().on('child_added', function(childSnap) {
-  // Convenience variables
-  var recTitle = childSnap.val().Title;
-  var recIngred = childSnap.val().Ingredients;
-  var recDirec = childSnap.val().Directions;
-  var recNotes = childSnap.val().Notes;
-  var rec_date = childSnap.val().SubDate;
-  var recUser = childSnap.val().User;
-  var recEmail = childSnap.val().Email;
-  // var newRec
-  // // Create the new Recipe card
-  // // newRec = $("<tr>").append(
-  // //     $("<td>").text(recTitle),
-  // //     $("<td>").text(recIngred),
-  // //     $("<td>").text(recDirec),
-  // //     $("<td>").text(recNotes),
-  // // );
-
-  // $("#newRecipe").append(newRec);
-});
 
 $('#newRecipeBtn').on('click', function(event) {
   event.preventDefault();
