@@ -12,9 +12,8 @@ body {
 .footer {
     bottom: 0;
     width: 100%;
-    position: relative;
-    padding: 20px; 
-    margin-top: 20px;
+    position: absolute;
+    background-color: #ffffff;
 }
 /* homepage nav bar */
 .navbar {
@@ -46,7 +45,7 @@ a {
     padding: 340px 140px 20px 140px;
 }
 .submissionForm {
-    padding-top: 40px;
-    padding-bottom: 40px;
+    padding: 40px;
+    padding: 40px;
 }
 
