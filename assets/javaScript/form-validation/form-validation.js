@@ -109,7 +109,7 @@ $("#schEda").on("click", function () {
         var p = $("<p>").text(results[j].recipe.label);
         recImage = $("<img>");
         recImage.attr("src", results[j].recipe.image);
-        recImage.attr(results[j].recipe.shareAs);
+        recImage.attr("data-link", results[j].recipe.shareAs);
         recDiv.append(recImage);
         recDiv.append(p);
         recDiv.append($("<br><br>"));
