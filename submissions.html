@@ -8,7 +8,10 @@
     <!-- bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <!--fonts-->
-    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css?family=Permanent+Marker"
+      rel="stylesheet"
+    />
     <!--Favicon-->
     <link rel="icon" type="image/ico" href="assets/images/book.ico" />
     <!-- Reset stylesheet -->
@@ -17,12 +20,11 @@
     <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
     <!-- Firebase -->
     <script src="https://www.gstatic.com/firebasejs/5.7.2/firebase.js"></script>
-
-</head>
-
+  </head>
 
   <body>
     <!-- navBar as a link-->
+
   <header id="masthead">
         <nav class="navbar navbar-inverse recipes">
             <div class="container-fluid">
@@ -35,58 +37,111 @@
               </ul>
             </div>
           </nav>
-          
+
     </header>
 
     <!-- recipe card -->
     <div class="container submissionForm">
-    <main class="w-100">
-      <!--Recipe Form Input-->
-      <div class="form-holder">
-        <form>
-          <!--Title-->
-          <div class="form-group">
-            <label for="title-input">Title</label>
-            <input type="text" class="form-control" id="title-input" />
-          </div>
-          <!--Ingredients-->
-          <div class="form-group">
-            <label for="ingredients-input">Ingredients</label>
-            <input type="text" class="form-control" id="ingredients-input" />
-          </div>
-          <!--Directions-->
-          <div class="form-group">
-            <label for="directions-input">Directions</label>
-            <input type="text" class="form-control" id="directions-input" />
-          </div>
-          <!--Notes-->
-          <div class="form-group">
-            <label for="notes-input">Title</label>
-            <input type="text" class="form-control" id="notes-input" />
-          </div>
-          <button id="newRecipeBtn">Submit</button>
-        </form>
-      </div>
-    </main>
-</div>
+      <main class="w-100">
+        <!--Recipe Form Input-->
+        <div class="form-holder">
+          <p class="instruction">* Required Field</p>
+          <form>
+            <!--Title-->
+            <div class="form-group">
+              <label class for="title-input">Title*</label>
+              <input
+                type="text"
+                class="form-control"
+                id="title-input"
+                data-validation="length"
+                data-validation-length="4-40"
+              />
+            </div>
+            <!--Ingredients-->
+            <div class="form-group">
+              <label for="ingredients-input">Ingredients*</label>
+              <input
+                type="text"
+                class="form-control parseForm"
+                id="ingredients-input"
+                data-validation="length"
+                data-validation-length="10-200"
+              />
+            </div>
+            <!--Directions-->
+            <div class="form-group">
+              <label for="directions-input">Directions*</label>
+              <textarea
+                rows="20"
+                columns="80"
+                type="text"
+                class="form-control parseForm"
+                id="directions-input"
+                data-validation="length"
+                data-validation-length="min20"
+              ></textarea>
+            </div>
+            <!--Notes-->
+            <div class="form-group">
+              <label for="notes-input">Notes (Optional)</label>
+              <textarea
+                type="text"
+                class="form-control parseForm"
+                id="notes-input"
+                data-validation="length"
+                data-validation-length="10-60"
+                data-validation-optional="true"
+              ></textarea>
+            </div>
+            <!--Username-->
+            <div class="form-group">
+              <label for="username-input">User Name*</label>
+              <input
+                type="text"
+                class="form-control parseForm"
+                id="username-input"
+                data-validation="alphanumeric"
+              />
+            </div>
+            <!--Email Address-->
+            <div class="form-group">
+              <label for="email-input">Email Address*</label>
+              <input
+                type="text"
+                class="form-control parseForm"
+                id="email-input"
+                data-validation="email"
+                data-suggestions="username@website.io"
+              />
+            </div>
+            <button id="newRecipeBtn">Submit</button>
+          </form>
+        </div>
+      </main>
+    </div>
 
     <!-- Footer -->
     <footer class="footer fixed-bottom">
-            <div>
-                <a href="https://github.com/dashinja">Miller</a>
-                <a href="https://github.com/smentzer">Mentzer</a>
-                <a href="https://github.com/danieljudsonblair">Blair</a> &copy;
-            </div>
-        </footer>
-    
+      <div>
+        <a href="https://github.com/dashinja">Miller</a>
+        <a href="https://github.com/smentzer">Mentzer</a>
+        <a href="https://github.com/danieljudsonblair">Blair</a> &copy;
+      </div>
+    </footer>
 
     <!-- jQuery-->
     <script
       type="text/javascript"
       src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"
     ></script>
+    <!--jQuery Form Validator-->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.3.26/jquery.form-validator.min.js"></script>
     <!-- javaScript -->
-    <script type="text/javascript" src="assets/javaScript/app.js"></script>
+    <script
+      type="text/javascript"
+      src="assets/javaScript/form-validation/form-validation.js"
+    ></script>
     <!-- Moment.js Reference -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
   </body>
