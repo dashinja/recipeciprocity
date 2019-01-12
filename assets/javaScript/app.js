@@ -31,8 +31,6 @@ firebase.initializeApp(config);
 
 var database = firebase.database();
 
-
-
 // when a child is added to firebase, retrieve the info
 database.ref().on('child_added', function(childSnap) {
   // Convenience variables
@@ -44,31 +42,40 @@ database.ref().on('child_added', function(childSnap) {
   var recUser = childSnap.val().User;
   var recEmail = childSnap.val().Email;
 
-  let newRec = $("#newRecipe")
+  let newRec = $('#newRecipe');
   let recipeCard = $(`
   <div class="card text-center">
-  <div class="card-header title">Title${recTitle}</div>
+  <div class="card-header title">
+  <!--Title-->
+    <h1 class="display-4">
+      ${recTitle}
+    </h1>
+  </div>
   <div class="card-body">
-    <h5 class="card-title">Special title treatment</h5>
+  <!--Ingredients-->
+    <h3 class="card-title">Ingredients: ${recIngred}</h3>
+    <!--directions-->
     <p class="card-text">
-      With supporting text below as a natural lead-in to additional
-      content.
+      Directions: ${recDirec}
     </p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
+    <!--Notes-->
+    <p class="card-text">
+      Directions: ${recNotes}
+    </p>
+    <!--posted By-->
+    <p class="card-text">
+      User: ${recUser}
+    </p>
+    <!--Post Timestamp-->
+    <p class="card-text">
+      User: ${rec_date}
+    </p>
+    <a href="#" class="btn btn-primary mt-3 btn-voice" id="readText">Speak Directions</a>
   </div>
   <div class="card-footer text-muted">2 days ago</div>
 </div>
 </div>
-  `)
-  // var newRec
-  // // Create the new Recipe card
-  // // newRec = $("<tr>").append(
-  // //     $("<td>").text(recTitle),
-  // //     $("<td>").text(recIngred),
-  // //     $("<td>").text(recDirec),
-  // //     $("<td>").text(recNotes),
-  // // );
+  `);
 
-  // $("#newRecipe").append(newRec);
+  newRec.prepend(recipeCard);
 });
-
