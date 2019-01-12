@@ -51,28 +51,25 @@ database.ref().on('child_added', function(childSnap) {
       ${recTitle}
     </h1>
   </div>
-  <div class="card-body">
+  <div class="card-body w-50 mx-auto">
   <!--Ingredients-->
-    <h3 class="card-title">Ingredients: ${recIngred}</h3>
-    <!--directions-->
-    <p class="card-text">
-      Directions: ${recDirec}
-    </p>
-    <!--Notes-->
-    <p class="card-text">
-      Directions: ${recNotes}
-    </p>
-    <!--posted By-->
-    <p class="card-text">
-      User: ${recUser}
-    </p>
-    <!--Post Timestamp-->
-    <p class="card-text">
-      User: ${rec_date}
-    </p>
-    <a href="#" class="btn btn-primary mt-3 btn-voice" id="readText">Speak Directions</a>
+    <h3 class="card-title ingredients font-weight-bold mb-1">Ingredients:</h3>
+    <p class="mt-2 mb-3" id="ingredients-shown">${recIngred}</p>
+  <!--Directions-->
+  <div class="direction-container">
+    <h3 class="card-title directions font-weight-bold mb-1 mt-4">Directions:</h3>
+    <p class="mt-2 mb-3" id="directions-shown">${recDirec}</p>
   </div>
-  <div class="card-footer text-muted">2 days ago</div>
+  <!--Notes-->
+    <h3 class="card-title notes font-weight-bold mb-1 mt-4">Notes:</h3>
+    <p class="mt-2 mb-3" id="notes-shown">${recNotes}</p>
+  <!--Username-->
+    <h3 class="card-title username font-weight-bold mb-1 mt-4">Posted by:</h3>
+    <p class="mt-2 mb-3" id="username-shown">${recUser}</p>
+    <!--Talking Button-->
+    <a href="#" class="btn btn-primary mt-0 btn-voice" id="readText">Speak Directions</a>
+  </div>
+  <div class="card-footer text-muted mb-5">${rec_date}</div>
 </div>
 </div>
   `);
