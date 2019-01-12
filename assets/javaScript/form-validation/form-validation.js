@@ -120,9 +120,9 @@ $("#schEda").on("click", function () {
 });
 
 
-// $(".schRes").on("click", "img", function () {});
-
-
+$(".schRes").on("click", "img", function () {
+  window.open($(this).attr("data-link"));
+});
 // Form Validation Activator
 // $.validate({
 //   lang: 'en'
