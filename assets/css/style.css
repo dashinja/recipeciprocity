@@ -7,7 +7,6 @@ body {
     color: 	#FFFFE0;
     filter: drop-shadow(0 0 0.75rem black);
     font-size: 30px;
-    font-family: 'Permanent Marker', cursive;
 }
 
 .footer {
@@ -15,13 +14,11 @@ body {
     width: 100%;
     position: absolute;
     background-color: #ffffff;
-    font-family: 'Permanent Marker', cursive;
 }
 /* homepage nav bar */
 .navbar {
     background: url("../images/sharing.jpg") no-repeat center fixed;
     padding: 340px 140px 20px 140px;
-    font-family: 'Permanent Marker', cursive;
 }
 .nav {
     font-size: 30px; 
