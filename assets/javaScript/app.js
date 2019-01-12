@@ -102,3 +102,8 @@ database.ref().on('child_added', function(childSnap) {
 
   // $("#newRecipe").append(newRec);
 });
+
+// Form Validation Activator
+$.validate({
+  lang: 'en'
+});
