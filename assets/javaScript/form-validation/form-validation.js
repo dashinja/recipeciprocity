@@ -9,10 +9,12 @@ var config = {
 firebase.initializeApp(config);
 
 var database = firebase.database();
+let recipeNum = 0;
 
-
-$('#newRecipeBtn').on('click', function (event) {
+$('#newRecipeBtn').on('click', function(event) {
   event.preventDefault();
+
+  recipeNum += 10;
 
   var rTitle = $('#title-input')
     .val()
@@ -45,10 +47,11 @@ $('#newRecipeBtn').on('click', function (event) {
     Notes: notes,
     SubDate: recDate,
     User: user,
-    Email: email
+    Email: email,
+    Key: database.ref().key,
+    Num: recipeNum
   };
 
-  // Uploads recipe data to firebase
   database.ref().push(newRecipe);
 
   // Clear all text-boxes
@@ -61,27 +64,21 @@ $('#newRecipeBtn').on('click', function (event) {
   $('#email-input').val('');
 });
 
-
 // Form Validation Activator
 $.validate({
-  lang: 'en'
+  lang: 'en',
+  validateOnBlur: true
 });
 
-
-
-
-
-
-
-        // for (let j = 0; j < results.length; j++) {
-      //   var celebDiv = $("<div>");
-      //   celebDiv.addClass("col-lg col-lg-m-1");
-      //   var p = $("<p>").text("Rating: " + results[j].rating);
-      //   celebImage = $("<img>");
-      //   celebImage.attr("src", results[j].images.fixed_height_still.url);
-      //   celebImage.attr("data-still", results[j].images.fixed_height_still.url);
-      //   celebImage.attr("data-animate", results[j].images.fixed_height.url);
-      //   celebImage.attr("data-state", "still");
-      //   celebDiv.append(celebImage);
-      //   celebDiv.append(p);
-      //   $(".gif-tainer").prepend(celebDiv);
+// for (let j = 0; j < results.length; j++) {
+//   var celebDiv = $("<div>");
+//   celebDiv.addClass("col-lg col-lg-m-1");
+//   var p = $("<p>").text("Rating: " + results[j].rating);
+//   celebImage = $("<img>");
+//   celebImage.attr("src", results[j].images.fixed_height_still.url);
+//   celebImage.attr("data-still", results[j].images.fixed_height_still.url);
+//   celebImage.attr("data-animate", results[j].images.fixed_height.url);
+//   celebImage.attr("data-state", "still");
+//   celebDiv.append(celebImage);
+//   celebDiv.append(p);
+//   $(".gif-tainer").prepend(celebDiv);
