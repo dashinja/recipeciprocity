@@ -1,23 +1,3 @@
-// ID’s
-// Home Page ID’s:
-// - Recipe page button: (links in nav bar)
-// - Recipe submission button: (links in nav bar)
-// - Scrolling image box: scrollingImages
-// - Search field:  searchIngredients
-// - Search button: searchBtn
-
-// Submit Form Page:
-// - Title: title-input
-// - Ingredients: ingredients-input
-// - Directions: directions-input
-// - Notes: notes-input
-// - ***Image Upload: newImage
-// - User Name: username-input
-// - Email Address: email-input
-// - Submit recipe button:  newRecipeBtn
-
-// Recipe Page:
-// Card: newRecipe
 
 var config = {
   apiKey: 'AIzaSyDDO32RIhsljwPbk3zu5WSBN2WEmEkKNF8',
@@ -32,7 +12,7 @@ firebase.initializeApp(config);
 var database = firebase.database();
 
 // when a child is added to firebase, retrieve the info
-database.ref().on('child_added', function(childSnap) {
+database.ref().on('child_added', function (childSnap) {
   // Convenience variables
   var recTitle = childSnap.val().Title;
   var recIngred = childSnap.val().Ingredients;
@@ -79,14 +59,14 @@ database.ref().on('child_added', function(childSnap) {
 
 // Edamam Search
 // on click listener for search button (index page)
-$('#schEda').on('click', function() {
+$('#schEda').on('click', function () {
   var rand = Math.floor(Math.random() * 100) + 1;
   var randb = rand + 12;
   var schEdaIng = $('#searchEdamam-input')
     .val()
     .trim()
     .toLowerCase();
-  console.log(schEdaIng);
+
   $('#searchEdamam-input').val('');
   $('.schRes').empty();
 
@@ -97,12 +77,12 @@ $('#schEda').on('click', function() {
     rand +
     '&to=' +
     randb;
-  //  reserved for later use "&from=0&to=10"
+
 
   $.ajax({
     url: queryURL,
     method: 'GET'
-  }).then(function(response) {
+  }).then(function (response) {
     var results = response.hits;
     console.log(results);
     for (let j = 0; j < results.length; j++) {
@@ -121,7 +101,7 @@ $('#schEda').on('click', function() {
   });
 });
 
-$('.schRes').on('click', 'img', function() {
+$('.schRes').on('click', 'img', function () {
   window.open($(this).attr('data-link'));
 });
 
