@@ -42,19 +42,16 @@ $(document).ready(function() {
     var recUser = childSnap.val().User;
     var recKey = childSnap.key;
     let recNum = childSnap.val().Num;
-    console.log('Am I the Alternative Style key?', recKey);
-    console.log("I'm the number", recNum);
-    // var recEmail = childSnap.val().Email;
 
-    //Show notes or Show N/A
-    let conditionalText = function () {
-      if (recNotes === "") {
-        recNotes = "N/A"
-        return recNotes
+    //Show notes content or Show N/A
+    let conditionalText = function() {
+      if (recNotes === '') {
+        recNotes = 'N/A';
+        return recNotes;
       } else {
-        return recNotes
+        return recNotes;
       }
-    }
+    };
 
     let newRec = $('#newRecipe');
     let recipeCard = $(`
@@ -91,36 +88,36 @@ $(document).ready(function() {
     newRec.prepend(recipeCard);
   });
 
-  //ResponseVoice:
-  // responsiveVoice.speak(text)
-
+  //Responsive Voice Section
   let speak = {
     and: function(text) {
       responsiveVoice.speak(text);
     }
   };
 
-  // let read (text) {
-  //   let aloud = {
-  //     title: function (text) {
-  //       responsiveVoice.speak(text)
-  //     }
-  //   }
-  // }
-
   $('.card-holder').on('click', '.btn-voice', function(event) {
-    event.preventDefault()
+    event.preventDefault();
     let sayTitle = $(this).attr('data-title');
     let sayIngred = $(this).attr('data-ingredients');
     let sayDirec = $(this).attr('data-directions');
     let sayNotes = $(this).attr('data-notes');
-    let sayUser = $(this).attr('data-username')
+    let sayUser = $(this).attr('data-username');
 
     speak.and(sayTitle);
-    speak.and(sayIngred)
-    speak.and(sayDirec)
-    speak.and(sayNotes)
-    speak.and(`Posted for you by ${sayUser}`)
+    speak.and(sayIngred);
+    speak.and(sayDirec);
+
+    // If no note content, do not read "N/A" outloud.
+    function conditionalNote() {
+      if (sayNotes === 'N/A') {
+        speak.and('Nothing further to note! Enjoy!');
+        return;
+      } else {
+        return speak.and(sayNotes);
+      }
+    }
+    conditionalNote();
+    speak.and(`Posted for you by ${sayUser}`);
   });
 
   // Edamam Search

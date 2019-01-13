@@ -52,7 +52,6 @@ $('#newRecipeBtn').on('click', function(event) {
     Num: recipeNum
   };
 
-  // Uploads recipe data to firebase
   database.ref().push(newRecipe);
 
   // Clear all text-boxes
@@ -67,7 +66,8 @@ $('#newRecipeBtn').on('click', function(event) {
 
 // Form Validation Activator
 $.validate({
-  lang: 'en'
+  lang: 'en',
+  validateOnBlur: true
 });
 
 // for (let j = 0; j < results.length; j++) {
