@@ -84,7 +84,7 @@ $('#schEda').on('click', function () {
     method: 'GET'
   }).then(function (response) {
     var results = response.hits;
-    console.log(results);
+
     for (let j = 0; j < results.length; j++) {
       var recDiv = $('<div>');
       recDiv.addClass('col-lg col-lg-m-1');
