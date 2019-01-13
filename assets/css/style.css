@@ -6,8 +6,13 @@ body {
 .logo {
     color: 	#FFFFE0;
     filter: drop-shadow(0 0 0.75rem black);
-    font-size: 30px;
+    /* font-size: 10 rem; */
    
+}
+
+.navbar-brand {
+    font-size: 8rem;
+    filter: drop-shadow(0 0 0.75rem black)
 }
 
 .footer {
@@ -21,13 +26,15 @@ body {
 /* homepage nav bar */
 .navbar {
     background: url("../images/sharing.jpg") no-repeat center fixed;
-    padding: 340px 140px 20px 140px;
+    padding: 340px 140px 0;
     margin-bottom: 40px;
     border-bottom: 1px solid #4dd0e1;
+    width: 100%;
 }
 .nav {
-    font-size: 30px; 
+    font-size: 3rem; 
     filter: drop-shadow(0 0 0.75rem black);
+
 }
 
 .navbar a:hover {
@@ -47,7 +54,7 @@ a {
 /* recipe nav bar */
 .recipes {
     background: url("../images/cookbooks.jpg") no-repeat center fixed;
-    padding: 340px 140px 20px 140px;
+    padding: 340px 140px 0;
 }
 .submissionForm {
     padding: 40px;
