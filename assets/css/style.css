@@ -39,6 +39,7 @@ body {
   /*To help with footer*/
   margin-top: 100px;
   flex-shrink: 0;
+  border-top: 1px solid #4dd0e1;
 }
 /* homepage nav bar */
 .navbar {
@@ -84,4 +85,8 @@ a {
 .active-cyan-4 input {
   border: 1px solid #4dd0e1;
   box-shadow: 0 0 0 1px #4dd0e1;
+}
+
+.newRecipe {
+  margin-bottom: 40px;
 }
