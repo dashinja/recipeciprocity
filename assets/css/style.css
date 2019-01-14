@@ -102,6 +102,9 @@ a {
   margin-bottom: 40px;
 }
 
+.border {
+ border-color:  #4dd0e1 !important;
+}
 /* media queries */
 @media only screen and (max-width: 425px) {
   .navbar {
