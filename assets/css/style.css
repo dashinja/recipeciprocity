@@ -1,4 +1,6 @@
-/*To help with footer*/
+/*To help with footer
+https://css-tricks.com/couple-takes-sticky-footer/
+Flex-box Version*/
 html,
 body {
   height: 100%;
