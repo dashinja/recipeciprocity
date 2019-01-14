@@ -35,125 +35,138 @@
     <header id="masthead">
       <nav class="navbar navbar-inverse">
         <div class="container-fluid">
-          <div class="navbar-header">
-            <a class="navbar-brand logo" href="index.html">Recipeciprocity</a>
+          <div class="navbar-header mx-md-auto">
+            <a class="navbar-brand logo" href="index.html"
+              >Recipeciprocity</a
+            >
           </div>
-          <ul class="nav navbar-nav navbar-right">
+          <ul class="nav navbar-nav navbar-right mx-md-auto mr-5 pr-5 d-flex align-self-end">
             <li><a href="recipes.html">Recipes</a></li>
             <li><a href="submissions.html">Submit Recipes</a></li>
           </ul>
         </div>
       </nav>
     </header>
-    <!-- pageBody-->
-    <div class="class container">
-      <div class="row">
-        <div class="col-md-6">
-          <!-- carousel -->
-          <div id="scrollingImages" class="carousel slide" data-ride="carousel">
-            <ol class="carousel-indicators">
-              <li
-                data-target="#carouselExampleIndicators"
-                data-slide-to="0"
-                class="active"
-              ></li>
-              <li
-                data-target="#carouselExampleIndicators"
-                data-slide-to="1"
-              ></li>
-              <li
-                data-target="#carouselExampleIndicators"
-                data-slide-to="2"
-              ></li>
-            </ol>
-            <div class="carousel-inner">
-              <div class="carousel-item active">
-                <img
-                  class="d-block w-100"
-                  src="assets/images/placeholder.jpg"
-                  alt="First slide"
-                />
+    <!--This content div helps footer work-->
+    <div class="content">
+      <!-- pageBody-->
+      <div class="class container">
+        <div class="row">
+          <div class="col-md-6">
+            <!-- carousel -->
+            <div
+              id="scrollingImages"
+              class="carousel slide"
+              data-ride="carousel"
+            >
+              <ol class="carousel-indicators">
+                <li
+                  data-target="#carouselExampleIndicators"
+                  data-slide-to="0"
+                  class="active"
+                ></li>
+                <li
+                  data-target="#carouselExampleIndicators"
+                  data-slide-to="1"
+                ></li>
+                <li
+                  data-target="#carouselExampleIndicators"
+                  data-slide-to="2"
+                ></li>
+              </ol>
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img
+                    class="d-block w-100"
+                    src="assets/images/placeholder.jpg"
+                    alt="First slide"
+                  />
+                </div>
+                <div class="carousel-item">
+                  <img
+                    class="d-block w-100"
+                    src="assets/images/placeholder.jpg"
+                    alt="Second slide"
+                  />
+                </div>
+                <div class="carousel-item">
+                  <img
+                    class="d-block w-100"
+                    src="assets/images/placeholder.jpg"
+                    alt="Third slide"
+                  />
+                </div>
               </div>
-              <div class="carousel-item">
-                <img
-                  class="d-block w-100"
-                  src="assets/images/placeholder.jpg"
-                  alt="Second slide"
-                />
-              </div>
-              <div class="carousel-item">
-                <img
-                  class="d-block w-100"
-                  src="assets/images/placeholder.jpg"
-                  alt="Third slide"
-                />
-              </div>
+              <a
+                class="carousel-control-prev"
+                href="#carouselExampleIndicators"
+                role="button"
+                data-slide="prev"
+              >
+                <span
+                  class="carousel-control-prev-icon"
+                  aria-hidden="true"
+                ></span>
+                <span class="sr-only">Previous</span>
+              </a>
+              <a
+                class="carousel-control-next"
+                href="#carouselExampleIndicators"
+                role="button"
+                data-slide="next"
+              >
+                <span
+                  class="carousel-control-next-icon"
+                  aria-hidden="true"
+                ></span>
+                <span class="sr-only">Next</span>
+              </a>
             </div>
-            <a
-              class="carousel-control-prev"
-              href="#carouselExampleIndicators"
-              role="button"
-              data-slide="prev"
-            >
-              <span
-                class="carousel-control-prev-icon"
-                aria-hidden="true"
-              ></span>
-              <span class="sr-only">Previous</span>
-            </a>
-            <a
-              class="carousel-control-next"
-              href="#carouselExampleIndicators"
-              role="button"
-              data-slide="next"
-            >
-              <span
-                class="carousel-control-next-icon"
-                aria-hidden="true"
-              ></span>
-              <span class="sr-only">Next</span>
-            </a>
           </div>
-        </div>
-        <div class="col-md-2"><!--placeholder--></div>
+          <div class="col-md-2"><!--placeholder--></div>
 
-        <div class="col-md-4">
-          <!--Awesome Search Bar Steph made-->
-          <!-- search button-->
-          <!-- <div class="active-cyan-3 active-cyan-4 mb-4 search" id="searchIngredients">
-            <input class="form-control" type="text" placeholder="Search Ingredients" aria-label="Search">
-          </div>             -->
+          <div class="col-md-4">
+            <!--Awesome Search Bar Steph made-->
+            <!-- search button-->
+            <!-- <div class="active-cyan-3 active-cyan-4 mb-4 search" id="searchIngredients">
+              <input class="form-control" type="text" placeholder="Search Ingredients" aria-label="Search">
+            </div>             -->
 
-          <!--Search Edamam Bar: Emamam Search + Steph Search Merge-->
-          <div class="form active-cyan-3 active-cyan-4 mb-4 search">
-            <label for="searchEdamam-input">Recipe Search</label><br /><br />
-            <input
-              type="text"
-              class="form-control parseForm"
-              id="searchEdamam-input"
-              data-validation="alphanumeric"
-              placeholder="Search Ingredients"
-              aria-label="Search"
-            />
+            <!--Search Edamam Bar: Emamam Search + Steph Search Merge-->
+            <div class="form active-cyan-3 active-cyan-4 mb-4 search">
+              <label for="searchEdamam-input">Recipe Search</label><br /><br />
+              <input
+                type="text"
+                class="form-control parseForm"
+                id="searchEdamam-input"
+                data-validation="alphanumeric"
+                placeholder="Search Ingredients"
+                aria-label="Search"
+              />
+            </div>
+            <br />
+            <button id="schEda">Search</button><br />
+            <br /><br />
           </div>
-          <br />
-          <button id="schEda">Search</button><br />
-          <br /><br />
-        </div>
 
-        <div class="row schRes"></div>
+          <div class="row schRes"></div>
+        </div>
       </div>
     </div>
     <!-- Footer -->
-    <footer class="footer fixed-bottom">
+    <footer class="footer fixed-bottom text-center bg-dark py-2 mt-5">
       <div class="row">
-        <div class="col-md-3">
+        <div
+          class="col-sm-3 mx-auto d-flex justify-content-between align-items-center"
+        >
           <a href="https://github.com/dashinja">Miller</a>
           <a href="https://github.com/smentzer">Mentzer</a>
-          <a href="https://github.com/danieljudsonblair">Blair &copy;</a>
+          <a href="https://github.com/danieljudsonblair" class="d-inline"
+            >Blair &copy;</a
+          >
         </div>
-        <div class="col-md-6">
-          <div id="edamam-badge" data-color="white"></div>
+        <div class="col-sm-6">
+          <div id="edamam-badge" data-color="transparent"></div>
         </div>
       </div>
     </footer>
@@ -164,10 +177,7 @@
       src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"
     ></script>
     <!-- javaScript -->
-    <script
-      type="text/javascript"
-      src="assets/javaScript/app.js"
-    ></script>
+    <script type="text/javascript" src="assets/javaScript/app.js"></script>
     <!-- Moment.js Reference -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
   </body>
