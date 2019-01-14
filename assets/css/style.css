@@ -73,8 +73,8 @@ a {
   padding: 340px 140px 0;
 }
 .submissionForm {
-  padding: 40px;
-  padding: 40px;
+    margin-top: 40px;
+    margin-bottom: 40px;
 }
 
 .carousel {
