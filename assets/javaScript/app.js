@@ -150,21 +150,22 @@ $(document).ready(function() {
       for (let j = 0; j < results.length; j++) {
         var recDiv = $('<div>');
         recDiv.addClass(
-          'col-lg col-lg-m-1 my-3 d-inline-flex align-items-center align-self-center'
+          'col-md m-1'
         );
-        var p = $('<p>').text(results[j].recipe.label);
-        p.addClass('text-center');
+        var p = $('<span>').text(results[j].recipe.label);
+        p.addClass('text-center d-block mx-auto');
         recImage = $('<img>');
         recImage.attr('src', results[j].recipe.image);
         recImage.attr('data-link', results[j].recipe.shareAs);
-        recImage.addClass('rounded mx-auto-px-4');
+        recImage.addClass('rounded mx-auto d-block');
         recDiv.append(recImage);
+        recDiv.append('<br>');
         recDiv.append(p);
         recDiv.append($('<br><br>'));
         var searchRes = $('.schRes');
         searchRes.addClass('mt-5 mx-auto py-3 border');
 
-        $('.schRes').prepend(recDiv);
+        $('.schRes').append(recDiv);
       }
     });
   });
