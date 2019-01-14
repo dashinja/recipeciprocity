@@ -247,7 +247,5 @@ $(document).ready(function() {
     owl.trigger('stop.owl.autoplay');
   });
 
-  $('owl-carousel').on('click', '.owl-image', function() {
-    console.log('carousel image clicked');
-  });
+  $('.owl-carousel').on('click', '.owl-image', carouselClick);
 });
