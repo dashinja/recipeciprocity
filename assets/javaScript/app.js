@@ -18,7 +18,7 @@
 
 // Recipe Page:
 // Card: newRecipe
-$(document).ready(function() {
+$(document).ready(function () {
   var config = {
     apiKey: 'AIzaSyDDO32RIhsljwPbk3zu5WSBN2WEmEkKNF8',
     authDomain: 'recipeciprocity.firebaseapp.com',
@@ -32,7 +32,7 @@ $(document).ready(function() {
   var database = firebase.database();
 
   // when a child is added to firebase, retrieve the info
-  database.ref().on('child_added', function(childSnap) {
+  database.ref().on('child_added', function (childSnap) {
     // Convenience variables
     var recTitle = childSnap.val().Title;
     var recIngred = childSnap.val().Ingredients;
@@ -44,7 +44,7 @@ $(document).ready(function() {
     let recNum = childSnap.val().Num;
 
     //Show notes content or Show N/A
-    let conditionalText = function() {
+    let conditionalText = function () {
       if (recNotes === '') {
         recNotes = 'N/A';
         return recNotes;
@@ -90,12 +90,12 @@ $(document).ready(function() {
 
   //Responsive Voice Section
   let speak = {
-    and: function(text) {
+    and: function (text) {
       responsiveVoice.speak(text);
     }
   };
 
-  $('.card-holder').on('click', '.btn-voice', function(event) {
+  $('.card-holder').on('click', '.btn-voice', function (event) {
     event.preventDefault();
     let sayTitle = $(this).attr('data-title');
     let sayIngred = $(this).attr('data-ingredients');
@@ -122,7 +122,7 @@ $(document).ready(function() {
 
   // Edamam Search
   // on click listener for search button (index page)
-  $('#schEda').on('click', function() {
+  $('#schEda').on('click keypress', function (e) {
     var rand = Math.floor(Math.random() * 100) + 1;
     var randb = rand + 12;
     var schEdaIng = $('#searchEdamam-input')
@@ -145,9 +145,9 @@ $(document).ready(function() {
     $.ajax({
       url: queryURL,
       method: 'GET'
-    }).then(function(response) {
+    }).then(function (response) {
       var results = response.hits;
-
+      console.log(results);
       for (let j = 0; j < results.length; j++) {
         var recDiv = $('<div>');
         recDiv.addClass('col-lg col-lg-m-1');
@@ -163,8 +163,16 @@ $(document).ready(function() {
       }
     });
   });
+  
+  // search executed on enter keypress
+  $("input#searchEdamam-input").on("keypress", function(e){
+    if (e.which === 13) {
+        $("#schEda").trigger('click');
+    }
+    });
 
-  $('.schRes').on('click', 'img', function() {
+
+  $('.schRes').on('click', 'img', function () {
     window.open($(this).attr('data-link'));
   });
 
