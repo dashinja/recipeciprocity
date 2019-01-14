@@ -1,86 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-        <title>Recipeciprocity</title>
-        <!-- bootstrap -->
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
-          crossorigin="anonymous" />
-    <!--Owl Carousel-->
-    <link
-      rel="stylesheet"
-      href="./assets/javaScript/owlcarousel/assets/owl.carousel.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="./assets/javaScript/owlcarousel/assets/owl.theme.default.min.css"
-    />
 
-    <!--fonts-->
-    <link
-      href="https://fonts.googleapis.com/css?family=Permanent+Marker"
-      rel="stylesheet"
-    />
-    <!--Favicon-->
-    <link rel="icon" type="image/ico" href="assets/images/book.ico" />
-    <!-- Reset stylesheet -->
-    <link rel="stylesheet" type="text/css" href="assets/css/reset.css" />
-    <!-- My Stylesheet -->
-    <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
-    <!-- Firebase -->
-    <script src="https://www.gstatic.com/firebasejs/5.7.2/firebase.js"></script>
-    <!-- edamam attribution -->
-    <script src="https://developer.edamam.com/attribution/badge.js"></script>
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Recipeciprocity</title>
+  <!-- bootstrap -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+    crossorigin="anonymous" />
+  <!--Owl Carousel-->
+  <link rel="stylesheet" href="./assets/javaScript/owlcarousel/assets/owl.carousel.min.css" />
+  <link rel="stylesheet" href="./assets/javaScript/owlcarousel/assets/owl.theme.default.min.css" />
 
-  <body>
-    <!-- navBar as a link-->
-    <header id="masthead">
-      <nav class="navbar navbar-inverse">
-        <div class="container-fluid">
-          <div class="navbar-header mx-md-auto">
-            <a class="navbar-brand logo" href="index.html">Recipeciprocity</a>
-          </div>
-          <ul
-            class="nav navbar-nav navbar-right mx-md-auto mr-5 pr-5 d-flex align-self-end text-center"
-          >
-            <li><a href="recipes.html">Recipes</a></li>
-            <li><a href="submissions.html">Submit Recipes</a></li>
-          </ul>
+  <!--fonts-->
+  <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet" />
+  <!--Favicon-->
+  <link rel="icon" type="image/ico" href="assets/images/book.ico" />
+  <!-- Reset stylesheet -->
+  <link rel="stylesheet" type="text/css" href="assets/css/reset.css" />
+  <!-- My Stylesheet -->
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+  <!-- Firebase -->
+  <script src="https://www.gstatic.com/firebasejs/5.7.2/firebase.js"></script>
+  <!-- edamam attribution -->
+  <script src="https://developer.edamam.com/attribution/badge.js"></script>
+</head>
+
+<body>
+  <!-- navBar as a link-->
+  <header id="masthead">
+    <nav class="navbar navbar-inverse">
+      <div class="container-fluid">
+        <div class="navbar-header mx-md-auto">
+          <a class="navbar-brand logo" href="index.html">Recipeciprocity</a>
         </div>
-      </nav>
-    </header>
-    <!--This content div helps footer work-->
-    <div class="content">
-      <!-- pageBody-->
-      <div class="class container">
-        <div class="row">
-          <div class="col-md-6">
-            <!-- carousel -->
-            <div class="owl-carousel" id="owl-generator">
-              <img src="" alt="" class="owl-image" data-num="1" />
-              <img src="" alt="" class="owl-image" data-num="2" />
-              <img src="" alt="" class="owl-image" data-num="3" />
-              <img src="" alt="" class="owl-image" data-num="4" />
-              <img src="" alt="" class="owl-image" data-num="5" />
-            </div>
-            <div class="button-container container">
-              <div class="button-holder row justify-content-center">
-                <a class="button secondary play mx-2 border p-3">Play</a>
-                <a class="button secondary stop mx-2 border p-3">Stop</a>
-              </div>
+        <ul class="nav navbar-nav navbar-right mx-md-auto mr-5 pr-5 d-flex align-self-end text-center">
+          <li><a href="recipes.html">Recipes</a></li>
+          <li><a href="submissions.html">Submit Recipes</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  <!--This content div helps footer work-->
+  <div class="content">
+    <!-- pageBody-->
+    <div class="class container">
+      <div class="row">
+        <div class="col-md-6">
+          <!-- carousel -->
+          <div class="owl-carousel" id="owl-generator">
+            <img src="" alt="" class="owl-image" data-num="1" />
+            <img src="" alt="" class="owl-image" data-num="2" />
+            <img src="" alt="" class="owl-image" data-num="3" />
+            <img src="" alt="" class="owl-image" data-num="4" />
+            <img src="" alt="" class="owl-image" data-num="5" />
+          </div>
+          <div class="button-container container">
+            <div class="button-holder row justify-content-center">
+              <a class="button secondary play mx-2 border p-3">Play</a>
+              <a class="button secondary stop mx-2 border p-3">Stop</a>
             </div>
           </div>
-          <div class="col-md-2">
-            <!--placeholder-->
-          </div>
-       
-       
+        </div>
+        <div class="col-md-2">
+          <!--placeholder-->
+        </div>
+
+
 
         <div class="col-md-4">
-          
+
           <!--Search Edamam Bar: Emamam Search + Steph Search Merge-->
           <div class="form active-cyan-3 active-cyan-4 mb-4 search">
             <label for="searchEdamam-input">Recipe Search</label><br /><br />
@@ -105,19 +95,19 @@
         </div>
       </div>
 
-        <div class="row schRes"></div>
-      </div>
+      <div class="row schRes"></div>
     </div>
+  </div>
   </div>
 
 
   <!-- Footer -->
   <footer class="footer fixed-bottom text-center bg-dark py-2 mt-5">
     <div class="row">
-      <div class="col-sm-3 mx-auto d-flex justify-content-between align-items-center">
-        <a href="https://github.com/dashinja">Miller</a>
-        <a href="https://github.com/smentzer">Mentzer</a>
-        <a href="https://github.com/danieljudsonblair" class="d-inline">Blair &copy;</a>
+      <div class="col-sm-3 mx-auto d-flex align-items-center">
+        <a href="https://github.com/dashinja" class="mx-1">Miller</a>
+        <a href="https://github.com/smentzer" class="mx-1">Mentzer</a>
+        <a href="https://github.com/danieljudsonblair" class="d-inline mx-1">Blair ©</a>
       </div>
       <div class="col-sm-6">
         <div id="edamam-badge" data-color="transparent"></div>
@@ -133,16 +123,14 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
 </body>
 
-    <!-- jQuery-->
-    <script
-      type="text/javascript"
-      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"
-    ></script>
-    <!--Owl Carousel-->
-    <script src="./assets/javaScript/owlcarousel/owl.carousel.min.js"></script>
-    <!-- javaScript -->
-    <script type="text/javascript" src="assets/javaScript/app.js"></script>
-    <!-- Moment.js Reference -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
-  </body>
+<!-- jQuery-->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!--Owl Carousel-->
+<script src="./assets/javaScript/owlcarousel/owl.carousel.min.js"></script>
+<!-- javaScript -->
+<script type="text/javascript" src="assets/javaScript/app.js"></script>
+<!-- Moment.js Reference -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
+</body>
+
 </html>
