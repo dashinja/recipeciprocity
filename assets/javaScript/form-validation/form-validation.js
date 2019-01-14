@@ -69,5 +69,3 @@ $.validate({
   lang: 'en',
   validateOnBlur: true
 });
-
-
