@@ -26,7 +26,7 @@ body {
 }
 
 .navbar-brand {
-  font-size: 7rem;
+  font-size: 5rem;
   filter: drop-shadow(0 0 0.75rem black);
 }
 
@@ -50,7 +50,7 @@ body {
   width: 100%;
 }
 .nav {
-  font-size: 3rem;
+  font-size: 2.5rem;
   filter: drop-shadow(0 0 0.75rem black);
 }
 
