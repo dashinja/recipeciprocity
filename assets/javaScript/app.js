@@ -178,4 +178,32 @@ $(document).ready(function () {
 
   //carousel id= scrollingImages
   // bootstrap says you can Call carousel manually with: $('.carousel').carousel()
+
+  // Owl Carousel (not bootstrap)
+
+  let genericRecipeSearch = [
+    "fried chicken",
+    "grilled asparagus",
+    "crepes",
+    "churros",
+    "tilapia"
+  ]
+  let randomizer = Math.floor(Math.random() * 3 + 1)
+  let randomSearchChoice = genericRecipeSearch[randomizer]
+
+  function populateCarousel() {
+    var queryURL =
+    'https://api.edamam.com/search?q=' +
+    randomSearchChoice +
+    '&app_id=1049264d&app_key=ec17d36aa8ef8192fe452b8e3fa1ce52&from=0&to=5';
+
+
+  $.ajax({
+    url: queryURL,
+    method: 'GET'
+  }).then(function (response) {
+    var results = response.hits;
+  })
+}
+  $(".owl-carousel").owlCarousel()
 });
