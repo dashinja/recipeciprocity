@@ -45,7 +45,7 @@ body {
   margin-top: 100px;
   flex-shrink: 0;
   border-top: 1px solid #4dd0e1;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 .copyright{
  color:  #ffffe0;
@@ -114,5 +114,11 @@ a {
   .navbar-brand {
     font-size: 2.15rem;
   }
+.link {
+  text-align: center !important;
+}
+body {
+  overflow-x: hidden !important;
+}
 
 }
