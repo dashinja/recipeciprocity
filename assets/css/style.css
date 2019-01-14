@@ -95,6 +95,7 @@ a {
 .active-cyan-4 input {
   border: 1px solid #4dd0e1;
   box-shadow: 0 0 0 1px #4dd0e1;
+  margin-bottom: 10px;
 }
 
 .newRecipe {
