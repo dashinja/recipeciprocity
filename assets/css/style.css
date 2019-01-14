@@ -1,6 +1,9 @@
 /*To help with footer
 https://css-tricks.com/couple-takes-sticky-footer/
 Flex-box Version*/
+* {
+  box-sizing: border-box;
+}
 html,
 body {
   height: 100%;
@@ -40,6 +43,7 @@ body {
   margin-top: 100px;
   flex-shrink: 0;
   border-top: 1px solid #4dd0e1;
+  overflow: hidden;
 }
 /* homepage nav bar */
 .navbar {
