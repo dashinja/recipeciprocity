@@ -195,7 +195,7 @@ $(document).ready(function () {
     var queryURL =
     'https://api.edamam.com/search?q=' +
     randomSearchChoice +
-    '&app_id=1049264d&app_key=ec17d36aa8ef8192fe452b8e3fa1ce52&from=0&to=5';
+    '&app_id=1049264d&app_key=ec17d36aa8ef8192fe452b8e3fa1ce52&from=0&to=6';
 
 
   $.ajax({
@@ -203,7 +203,38 @@ $(document).ready(function () {
     method: 'GET'
   }).then(function (response) {
     var results = response.hits;
+    for (let i = 0; i < results.length; i++) {
+      // let imgHold = $("<img>")
+      // imgHold.attr("data-num", i)
+      // imgHold.attr("src", results[i].recipe.image)
+      // $(".owl-carousel").(imgHold)
+      // $(`data-num${i}`).attr("src", results[i].recipe.image)
+      $(`[data-num=${i}]`).attr("src", results[i].recipe.image)
+      
+      
+      // let holder = `test${i}`
+      // let holder = $(".own-carousel").children("data-num")
+      // console.log("I'm holder:", holder)
+
+    }
   })
 }
-  $(".owl-carousel").owlCarousel()
+
+populateCarousel()
+
+var owl = $('.owl-carousel');
+owl.owlCarousel({
+    items:4,
+    loop:true,
+    margin:10,
+    autoplay:true,
+    autoplayTimeout:4000,
+    autoplayHoverPause:true
+});
+$('.play').on('click',function(){
+    owl.trigger('play.owl.autoplay',[1000])
+})
+$('.stop').on('click',function(){
+    owl.trigger('stop.owl.autoplay')
+})
 });
