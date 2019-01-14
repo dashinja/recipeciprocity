@@ -1,53 +1,76 @@
+/*To help with footer
+https://css-tricks.com/couple-takes-sticky-footer/
+Flex-box Version*/
+html,
 body {
-    background-color: darkgray;
-    font-family: 'Permanent Marker', cursive;
+  height: 100%;
+}
+body {
+  background-color: darkgray;
+  font-family: 'Permanent Marker', cursive;
+
+  /*To help with footer*/
+  display: flex;
+  flex-direction: column;
+}
+
+/*To help with footer*/
+.content {
+  flex: 1 0 auto;
 }
 
 .logo {
-    color: 	#FFFFE0;
-    filter: drop-shadow(0 0 0.75rem black);
-    font-size: 30px;
-   
+  color: #ffffe0;
+  filter: drop-shadow(0 0 0.75rem black);
+  /* font-size: 10 rem; */
+}
+
+.navbar-brand {
+  font-size: 7rem;
+  filter: drop-shadow(0 0 0.75rem black);
 }
 
 .footer {
-    bottom: 0;
-    width: 100%;
-    position: relative;
-    background: transparent;
-    margin-top: 100px;
+  bottom: 0;
+  width: 100%;
+  position: relative;
+  background: transparent;
 
+  /*To help with footer*/
+  margin-top: 100px;
+  flex-shrink: 0;
 }
 /* homepage nav bar */
 .navbar {
-    background: url("../images/sharing.jpg") no-repeat center fixed;
-    padding: 340px 140px 20px 140px;
-    margin-bottom: 40px;
-    border-bottom: 1px solid #4dd0e1;
+  background: url('../images/sharing.jpg') no-repeat center fixed;
+  padding: 340px 140px 0;
+  margin-bottom: 40px;
+  border-bottom: 1px solid #4dd0e1;
+  width: 100%;
 }
 .nav {
-    font-size: 30px; 
-    filter: drop-shadow(0 0 0.75rem black);
+  font-size: 3rem;
+  filter: drop-shadow(0 0 0.75rem black);
 }
 
 .navbar a:hover {
-    color: 	#bedcaa;
-  }
+  color: #bedcaa;
+}
 
-.nav > li > a:hover{
-    background: transparent;
+.nav > li > a:hover {
+  background: transparent;
 }
 
 a {
-    color:	#FFFFE0;
-    text-decoration: none;
-    filter: drop-shadow(0 0 0.75rem black);
+  color: #ffffe0;
+  text-decoration: none;
+  filter: drop-shadow(0 0 0.75rem black);
 }
 
 /* recipe nav bar */
 .recipes {
-    background: url("../images/cookbooks.jpg") no-repeat center fixed;
-    padding: 340px 140px 20px 140px;
+  background: url('../images/cookbooks.jpg') no-repeat center fixed;
+  padding: 340px 140px 0;
 }
 .submissionForm {
     margin-top: 40px;
@@ -55,11 +78,10 @@ a {
 }
 
 .carousel {
-    border: 1px solid #4dd0e1;
+  border: 1px solid #4dd0e1;
 }
 
 .active-cyan-4 input {
-    border: 1px solid #4dd0e1;
-    box-shadow: 0 0 0 1px #4dd0e1;
-
+  border: 1px solid #4dd0e1;
+  box-shadow: 0 0 0 1px #4dd0e1;
 }
