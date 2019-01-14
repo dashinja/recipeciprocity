@@ -26,7 +26,7 @@ body {
 }
 
 .navbar-brand {
-  font-size: 7rem;
+  font-size: 5rem;
   filter: drop-shadow(0 0 0.75rem black);
 }
 
@@ -39,6 +39,7 @@ body {
   /*To help with footer*/
   margin-top: 100px;
   flex-shrink: 0;
+  border-top: 1px solid #4dd0e1;
 }
 /* homepage nav bar */
 .navbar {
@@ -49,7 +50,7 @@ body {
   width: 100%;
 }
 .nav {
-  font-size: 3rem;
+  font-size: 2.5rem;
   filter: drop-shadow(0 0 0.75rem black);
 }
 
@@ -84,4 +85,8 @@ a {
 .active-cyan-4 input {
   border: 1px solid #4dd0e1;
   box-shadow: 0 0 0 1px #4dd0e1;
+}
+
+.newRecipe {
+  margin-bottom: 40px;
 }
