@@ -47,6 +47,9 @@ body {
   border-top: 1px solid #4dd0e1;
   overflow: hidden;
 }
+.copyright{
+ color:  #ffffe0;
+}
 /* homepage nav bar */
 .navbar {
   background: url('../images/sharing.jpg') no-repeat center fixed;
