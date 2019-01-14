@@ -18,7 +18,7 @@
 
 // Recipe Page:
 // Card: newRecipe
-$(document).ready(function () {
+$(document).ready(function() {
   var config = {
     apiKey: 'AIzaSyDDO32RIhsljwPbk3zu5WSBN2WEmEkKNF8',
     authDomain: 'recipeciprocity.firebaseapp.com',
@@ -32,7 +32,7 @@ $(document).ready(function () {
   var database = firebase.database();
 
   // when a child is added to firebase, retrieve the info
-  database.ref().on('child_added', function (childSnap) {
+  database.ref().on('child_added', function(childSnap) {
     // Convenience variables
     var recTitle = childSnap.val().Title;
     var recIngred = childSnap.val().Ingredients;
@@ -44,7 +44,7 @@ $(document).ready(function () {
     let recNum = childSnap.val().Num;
 
     //Show notes content or Show N/A
-    let conditionalText = function () {
+    let conditionalText = function() {
       if (recNotes === '') {
         recNotes = 'N/A';
         return recNotes;
@@ -90,12 +90,12 @@ $(document).ready(function () {
 
   //Responsive Voice Section
   let speak = {
-    and: function (text) {
+    and: function(text) {
       responsiveVoice.speak(text);
     }
   };
 
-  $('.card-holder').on('click', '.btn-voice', function (event) {
+  $('.card-holder').on('click', '.btn-voice', function(event) {
     event.preventDefault();
     let sayTitle = $(this).attr('data-title');
     let sayIngred = $(this).attr('data-ingredients');
@@ -122,7 +122,7 @@ $(document).ready(function () {
 
   // Edamam Search
   // on click listener for search button (index page)
-  $('#schEda').on('click keypress', function (e) {
+  $('#schEda').on('click keypress', function(e) {
     var rand = Math.floor(Math.random() * 100) + 1;
     var randb = rand + 12;
     var schEdaIng = $('#searchEdamam-input')
@@ -141,41 +141,113 @@ $(document).ready(function () {
       '&to=' +
       randb;
 
-
     $.ajax({
       url: queryURL,
       method: 'GET'
-    }).then(function (response) {
+    }).then(function(response) {
       var results = response.hits;
       console.log(results);
       for (let j = 0; j < results.length; j++) {
         var recDiv = $('<div>');
-        recDiv.addClass('col-lg col-lg-m-1');
+        recDiv.addClass(
+          'col-lg col-lg-m-1 my-3 d-inline-flex align-items-center align-self-center'
+        );
         var p = $('<p>').text(results[j].recipe.label);
+        p.addClass('text-center');
         recImage = $('<img>');
         recImage.attr('src', results[j].recipe.image);
         recImage.attr('data-link', results[j].recipe.shareAs);
-        recImage.addClass('rounded');
+        recImage.addClass('rounded mx-auto-px-4');
         recDiv.append(recImage);
         recDiv.append(p);
         recDiv.append($('<br><br>'));
+        var searchRes = $('.schRes');
+        searchRes.addClass('mt-5 mx-auto py-3 border');
+
         $('.schRes').prepend(recDiv);
       }
     });
   });
-  
+
   // search executed on enter keypress
-  $("input#searchEdamam-input").on("keypress", function(e){
+  $('input#searchEdamam-input').on('keypress', function(e) {
     if (e.which === 13) {
-        $("#schEda").trigger('click');
+      $('#schEda').trigger('click');
     }
-    });
+  });
 
-
-  $('.schRes').on('click', 'img', function () {
+  $('.schRes').on('click', 'img', function() {
     window.open($(this).attr('data-link'));
   });
 
   //carousel id= scrollingImages
   // bootstrap says you can Call carousel manually with: $('.carousel').carousel()
+
+  // Owl Carousel (not bootstrap)
+
+  let genericRecipeSearch = [
+    'fried chicken',
+    'grilled asparagus',
+    'crepes',
+    'churros',
+    'tilapia'
+  ];
+  let randomizer = Math.floor(Math.random() * 3 + 1);
+  let randomSearchChoice = genericRecipeSearch[randomizer];
+
+  function populateCarousel() {
+    var queryURL =
+      'https://api.edamam.com/search?q=' +
+      randomSearchChoice +
+      '&app_id=1049264d&app_key=ec17d36aa8ef8192fe452b8e3fa1ce52&from=0&to=6';
+
+    $.ajax({
+      url: queryURL,
+      method: 'GET'
+    }).then(function(response) {
+      var results = response.hits;
+      for (let i = 0; i < results.length; i++) {
+        // let imgHold = $("<img>")
+        // imgHold.attr("data-num", i)
+        // imgHold.attr("src", results[i].recipe.image)
+        // $(".owl-carousel").(imgHold)
+        // $(`data-num${i}`).attr("src", results[i].recipe.image)
+        $(`[data-num=${i}]`).attr('src', results[i].recipe.image);
+        $(`[data-num=${i}]`).attr('data-link', results[i].recipe.shareAs);
+        $(`[data-num=${i}]`).attr('alt', results[i].recipe.label);
+
+        // let holder = `test${i}`
+        // let holder = $(".own-carousel").children("data-num")
+        // console.log("I'm holder:", holder)
+      }
+    });
+  }
+
+  populateCarousel();
+
+  function carouselClick() {
+    console.log("before handler, but I'm clicked");
+    window.open($(this).attr('data-link'));
+    console.log("after handler, and I'm still clicked");
+  }
+
+  var owl = $('.owl-carousel');
+  owl.owlCarousel({
+    items: 4,
+    loop: true,
+    margin: 10,
+    autoplay: true,
+    autoplayTimeout: 4000,
+    autoplayHoverPause: true
+  });
+  $('.play').on('click', function() {
+    owl.trigger('play.owl.autoplay', [1000]);
+  });
+  $('.stop').on('click', function() {
+    owl.trigger('stop.owl.autoplay');
+  });
+
+  $('owl-carousel').on('click', '.owl-image', function() {
+    console.log('carousel image clicked');
+  });
 });
