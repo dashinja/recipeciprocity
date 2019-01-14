@@ -55,7 +55,7 @@ $(document).ready(function() {
 
     let newRec = $('#newRecipe');
     let recipeCard = $(`
-    <div class="card card-identity text-center">
+    <div class="card card-identity text-center mt-5">
       <div class="card-header title">
         <!--Title-->
           <h1 class="display-4 title-text">
@@ -80,7 +80,7 @@ $(document).ready(function() {
           <!--Talking Button-->
           <a href="#" class="btn btn-primary mt-0 btn-voice" id="readText" data-num="${recNum}" data-key="${recKey}" data-title="${recTitle}" data-ingredients="${recIngred}" data-directions="${recDirec}" data-notes="${recNotes}" data-username="${recUser}">Speak Directions</a>
         </div>
-        <div class="card-footer text-muted mb-5">${rec_date}</div>
+        <div class="card-footer text-muted">${rec_date}</div>
       </div>
     </div>
     `);
