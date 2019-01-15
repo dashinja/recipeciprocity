@@ -186,11 +186,16 @@ $(document).ready(function() {
   // Owl Carousel (not bootstrap)
 
   let genericRecipeSearch = [
-    'fried chicken',
-    'grilled asparagus',
+    'chicken',
+    'asparagus',
     'crepes',
     'churros',
-    'tilapia'
+    'tilapia',
+    "cholate chip cookies",
+    "meatloaf",
+    "steak",
+    "salad",
+    "appetizer"
   ];
   let randomizer = Math.floor(Math.random() * 3 + 1);
   let randomSearchChoice = genericRecipeSearch[randomizer];
