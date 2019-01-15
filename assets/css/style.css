@@ -1,6 +1,4 @@
-/*To help with footer
-https://css-tricks.com/couple-takes-sticky-footer/
-Flex-box Version*/
+
 * {
   box-sizing: border-box;
 }
@@ -27,7 +25,6 @@ body {
 .logo {
   color: #ffffe0;
   filter: drop-shadow(0 0 0.75rem black);
-  /* font-size: 10 rem; */
 }
 
 .navbar-brand {
@@ -35,9 +32,6 @@ body {
   filter: drop-shadow(0 0 0.75rem black);
 }
 
-/* img-holder {
-  filter: drop-shadow(10 10 0.75rem black);
-} */
 
 .footer {
   bottom: 0;
