@@ -1,24 +1,5 @@
-// ID’s
-// Home Page ID’s:
-// - Recipe page button: (links in nav bar)
-// - Recipe submission button: (links in nav bar)
-// - Scrolling image box: scrollingImages
-// - Search field:  searchIngredients
-// - Search button: searchBtn
 
-// Submit Form Page:
-// - Title: title-input
-// - Ingredients: ingredients-input
-// - Directions: directions-input
-// - Notes: notes-input
-// - ***Image Upload: newImage
-// - User Name: username-input
-// - Email Address: email-input
-// - Submit recipe button:  newRecipeBtn
-
-// Recipe Page:
-// Card: newRecipe
-$(document).ready(function() {
+$(document).ready(function () {
   var config = {
     apiKey: 'AIzaSyDDO32RIhsljwPbk3zu5WSBN2WEmEkKNF8',
     authDomain: 'recipeciprocity.firebaseapp.com',
@@ -28,25 +9,25 @@ $(document).ready(function() {
     messagingSenderId: '816681104299'
   };
   firebase.initializeApp(config);
-
   var database = firebase.database();
+
   var recLimit = 10;
-  
-  // when a child is added to firebase, retrieve the info
-  database.ref().limitToLast(recLimit).on('child_added', function(childSnap) {
-    // Convenience variables
+
+
+  database.ref().limitToLast(recLimit).on('child_added', function (childSnap) {
+
     var recTitle = childSnap.val().Title;
     var recIngred = childSnap.val().Ingredients;
     var recDirec = childSnap.val().Directions;
     var recNotes = childSnap.val().Notes;
-    // timestamp is converted to browser local time
+    // timestamp is converted from unix to browser local time
     var rec_date = moment(childSnap.val().SubDate).format('LLL');
     var recUser = childSnap.val().User;
     var recKey = childSnap.key;
     let recNum = childSnap.val().Num;
 
     //Show notes content or Show N/A
-    let conditionalText = function() {
+    let conditionalText = function () {
       if (recNotes === '') {
         recNotes = 'N/A';
         return recNotes;
@@ -92,12 +73,12 @@ $(document).ready(function() {
 
   //Responsive Voice Section
   let speak = {
-    and: function(text) {
+    and: function (text) {
       responsiveVoice.speak(text);
     }
   };
 
-  $('.card-holder').on('click', '.btn-voice', function(event) {
+  $('.card-holder').on('click', '.btn-voice', function (event) {
     event.preventDefault();
     let sayTitle = $(this).attr('data-title');
     let sayIngred = $(this).attr('data-ingredients');
@@ -109,7 +90,7 @@ $(document).ready(function() {
     speak.and(sayIngred);
     speak.and(sayDirec);
 
-    // If no note content, do not read "N/A" outloud.
+
     function conditionalNote() {
       if (sayNotes === 'N/A') {
         speak.and('Nothing further to note! Enjoy!');
@@ -122,9 +103,8 @@ $(document).ready(function() {
     speak.and(`Posted for you by ${sayUser}`);
   });
 
-  // Edamam Search
-  // on click listener for search button (index page)
-  $('#schEda').on('click keypress', function(e) {
+  // Edamam Search (index page)
+  $('#schEda').on('click keypress', function (e) {
     var rand = Math.floor(Math.random() * 100) + 1;
     var randb = rand + 12;
     var schEdaIng = $('#searchEdamam-input')
@@ -146,9 +126,9 @@ $(document).ready(function() {
     $.ajax({
       url: queryURL,
       method: 'GET'
-    }).then(function(response) {
+    }).then(function (response) {
       var results = response.hits;
-      console.log(results);
+
       for (let j = 0; j < results.length; j++) {
         var recDiv = $('<div>');
         recDiv.addClass('col-md m-1');
@@ -170,19 +150,17 @@ $(document).ready(function() {
     });
   });
 
-  // search executed on enter keypress
-  $('input#searchEdamam-input').on('keypress', function(e) {
+
+  $('input#searchEdamam-input').on('keypress', function (e) {
     if (e.which === 13) {
       $('#schEda').trigger('click');
     }
   });
 
-  $('.schRes').on('click', 'img', function() {
+  $('.schRes').on('click', 'img', function () {
     window.open($(this).attr('data-link'));
   });
 
-  //carousel id= scrollingImages
-  // bootstrap says you can Call carousel manually with: $('.carousel').carousel()
 
   // Owl Carousel (not bootstrap)
 
@@ -210,17 +188,9 @@ $(document).ready(function() {
     $.ajax({
       url: queryURL,
       method: 'GET'
-    }).then(function(response) {
+    }).then(function (response) {
       var results = response.hits;
 
-      // Test and choose a normalizer: normalizeTexyByWord combo suggested
-      function normalizeText(text) {
-        if (text.length > 12) {
-          return `${text.substring(0, 20)}...`;
-        } else {
-          return text;
-        }
-      }
 
       function normalizeTextbyWord(text) {
         if (text.length > 25) {
@@ -235,18 +205,6 @@ $(document).ready(function() {
         }
       }
 
-      function normalizeByWord(text) {
-        let noLongerThan = 30;
-
-        let normalizer = text.substring(0, noLongerThan);
-        console.log('Before:', normalizer);
-        normalizer = normalizer.substring(
-          0,
-          Math.min(normalizer.length, normalizer.lastIndexOf(' '))
-        );
-        console.log('After adjustment:', normalizer);
-        return `${normalizer}...`;
-      }
 
       for (let i = 0; i < results.length; i++) {
         $(`[data-num=${i}]`).attr('src', results[i].recipe.image);
@@ -262,9 +220,9 @@ $(document).ready(function() {
   populateCarousel();
 
   function carouselClick() {
-    console.log("before handler, but I'm clicked");
+
     window.open($(this).attr('data-link'));
-    console.log("after handler, and I'm still clicked");
+
   }
 
   var owl = $('.owl-carousel');
@@ -292,10 +250,10 @@ $(document).ready(function() {
     }
   });
 
-  $('.play').on('click', function() {
+  $('.play').on('click', function () {
     owl.trigger('play.owl.autoplay', [4000]);
   });
-  $('.stop').on('click', function() {
+  $('.stop').on('click', function () {
     owl.trigger('stop.owl.autoplay');
   });
 
