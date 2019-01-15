@@ -210,18 +210,12 @@ $(document).ready(function() {
     }).then(function(response) {
       var results = response.hits;
       for (let i = 0; i < results.length; i++) {
-        // let imgHold = $("<img>")
-        // imgHold.attr("data-num", i)
-        // imgHold.attr("src", results[i].recipe.image)
-        // $(".owl-carousel").(imgHold)
-        // $(`data-num${i}`).attr("src", results[i].recipe.image)
+
         $(`[data-num=${i}]`).attr('src', results[i].recipe.image);
         $(`[data-num=${i}]`).attr('data-link', results[i].recipe.shareAs);
         $(`[data-num=${i}]`).attr('alt', results[i].recipe.label);
+        $(`[data-title=${i}]`).addClass("text-center d-block mx-auto").text(results[i].recipe.label);
 
-        // let holder = `test${i}`
-        // let holder = $(".own-carousel").children("data-num")
-        // console.log("I'm holder:", holder)
       }
     });
   }
