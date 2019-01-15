@@ -1,126 +1,148 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Recipeciprocity</title>
+    <!-- bootstrap -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+      integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+      crossorigin="anonymous"
+    />
+    <!--Owl Carousel-->
+    <link
+      rel="stylesheet"
+      href="./assets/javaScript/owlcarousel/assets/owl.carousel.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="./assets/javaScript/owlcarousel/assets/owl.theme.default.min.css"
+    />
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <title>Recipeciprocity</title>
-  <!-- bootstrap -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
-    crossorigin="anonymous" />
-  <!--Owl Carousel-->
-  <link rel="stylesheet" href="./assets/javaScript/owlcarousel/assets/owl.carousel.min.css" />
-  <link rel="stylesheet" href="./assets/javaScript/owlcarousel/assets/owl.theme.default.min.css" />
+    <!--fonts-->
+    <link
+      href="https://fonts.googleapis.com/css?family=Permanent+Marker"
+      rel="stylesheet"
+    />
+    <!--Favicon-->
+    <link rel="icon" type="image/ico" href="assets/images/book.ico" />
+    <!-- Reset stylesheet -->
+    <link rel="stylesheet" type="text/css" href="assets/css/reset.css" />
+    <!-- My Stylesheet -->
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/5.7.2/firebase.js"></script>
+    <!-- edamam attribution -->
+    <script src="https://developer.edamam.com/attribution/badge.js"></script>
+  </head>
 
-  <!--fonts-->
-  <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet" />
-  <!--Favicon-->
-  <link rel="icon" type="image/ico" href="assets/images/book.ico" />
-  <!-- Reset stylesheet -->
-  <link rel="stylesheet" type="text/css" href="assets/css/reset.css" />
-  <!-- My Stylesheet -->
-  <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
-  <!-- Firebase -->
-  <script src="https://www.gstatic.com/firebasejs/5.7.2/firebase.js"></script>
-  <!-- edamam attribution -->
-  <script src="https://developer.edamam.com/attribution/badge.js"></script>
-</head>
-
-<body>
-  <!-- navBar as a link-->
-  <header id="masthead">
-    <nav class="navbar navbar-inverse">
-      <div class="container-fluid">
-        <div class="navbar-header mx-md-auto">
-          <a class="navbar-brand logo" href="index.html">Recipeciprocity</a>
-        </div>
-        <ul class="nav navbar-nav navbar-right mx-md-auto mr-5 pr-5 d-flex align-self-end">
-          <li><a href="recipes.html">Recipes</a></li>
-          <li><a href="submissions.html">Submit Recipes</a></li>
-        </ul>
-      </div>
-    </nav>
-  </header>
-  <!--This content div helps footer work-->
-  <div class="content">
-    <!-- pageBody-->
-    <div class="class container">
-      <div class="row">
-        <div class="col-md-6">
-          <!-- carousel -->
-          <div class="owl-carousel" id="owl-generator">
-            <img src="" alt="" class="owl-image" data-num="1" />
-              <span class="spanner" data-title="1"></span>
-            <img src="" alt="" class="owl-image" data-num="2" />
-              <span class="spanner" data-title="2"></span>
-            <img src="" alt="" class="owl-image" data-num="3" />
-              <span class="spanner" data-title="3"></span>
-            <img src="" alt="" class="owl-image" data-num="4" />
-              <span class="spanner" data-title="4"></span>
-            <img src="" alt="" class="owl-image" data-num="5" />
-              <span class="spanner" data-title="5"></span>
+  <body>
+    <!-- navBar as a link-->
+    <header id="masthead">
+      <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+          <div class="navbar-header mx-md-auto">
+            <a class="navbar-brand logo" href="index.html">Recipeciprocity</a>
           </div>
-          <div class="button-container container">
-            <div class="button-holder row justify-content-center">
-              <a class="button secondary play mx-2 border p-3">Play</a>
-              <a class="button secondary stop mx-2 border p-3">Stop</a>
+          <ul
+            class="nav navbar-nav navbar-right mx-md-auto mr-5 pr-5 d-flex align-self-end"
+          >
+            <li><a href="recipes.html">Recipes</a></li>
+            <li><a href="submissions.html">Submit Recipes</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <!--This content div helps footer work-->
+    <div class="content">
+      <!-- pageBody-->
+      <div class="class container">
+        <div class="row">
+          <div class="col-md-6">
+            <!-- carousel -->
+            <div class="owl-carousel" id="owl-generator">
+              <div class="img-holder">
+                <img src="" alt="" class="owl-image" data-num="1" />
+                <span class="spanner" data-title="1"></span>
+              </div>
+
+              <div class="img-holder">
+                <img src="" alt="" class="owl-image" data-num="2" />
+                <span class="spanner" data-title="2"></span>
+              </div>
+              <div class="img-holder">
+                <img src="" alt="" class="owl-image" data-num="3" />
+                <span class="spanner" data-title="3"></span>
+              </div>
+              <div class="img-holder">
+                <img src="" alt="" class="owl-image" data-num="4" />
+                <span class="spanner" data-title="4"></span>
+              </div>
+              <div class="img-holder">
+                <img src="" alt="" class="owl-image" data-num="5" />
+                <span class="spanner" data-title="5"></span>
+              </div>
+            </div>
+            <div class="button-container container">
+              <div class="button-holder row justify-content-center">
+                <a class="button secondary play mx-2 border p-3">Play</a>
+                <a class="button secondary stop mx-2 border p-3">Stop</a>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="col-md-2">
-          <!--placeholder-->
-        </div>
+          <div class="col-md-2"><!--placeholder--></div>
 
-
-
-        <div class="col-md-4">
-
-          <!--Search Edamam Bar: Emamam Search + Steph Search Merge-->
-          <div class="form active-cyan-3 active-cyan-4 mb-4 search">
-            <label for="searchEdamam-input">Recipe Search</label><br /><br />
-            <input type="text" class="form-control parseForm" id="searchEdamam-input" data-validation="alphanumeric"
-              placeholder="Recipes or Ingredients" aria-label="Search" />
+          <div class="col-md-4">
+            <!--Search Edamam Bar: Emamam Search + Steph Search Merge-->
+            <div class="form active-cyan-3 active-cyan-4 mb-4 search">
+              <label for="searchEdamam-input">Recipe Search</label><br /><br />
+              <input
+                type="text"
+                class="form-control parseForm"
+                id="searchEdamam-input"
+                data-validation="alphanumeric"
+                placeholder="Recipes or Ingredients"
+                aria-label="Search"
+              />
               <button id="schEda">Search</button>
             </div>
-          <div class="row">
-            <div class="col-md-12">
-              <h1 class="text-center">About Us</h1>
-            </div>
-            <div class="row text-center w-100">
-              <p>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vitae nulla magnam qui voluptas. Error,
-                molestias reiciendis, ducimus nulla hic ipsam provident aspernatur sunt consectetur odio quis. Libero
-                quis expedita laudantium!
-              </p>
+            <div class="row">
+              <div class="col-md-12"><h1 class="text-center">About Us</h1></div>
+              <div class="row text-center w-100">
+                <p>
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                  Vitae nulla magnam qui voluptas. Error, molestias reiciendis,
+                  ducimus nulla hic ipsam provident aspernatur sunt consectetur
+                  odio quis. Libero quis expedita laudantium!
+                </p>
+              </div>
             </div>
           </div>
         </div>
-      </div>
 
-      <div class="row schRes"></div>
-    </div>
-  </div>
-  </div>
-
-
-  <!-- Footer -->
-  <footer class="footer fixed-bottom text-center bg-dark py-2 mt-5">
-    <div class="row">
-      <div class="col-sm-3 mx-auto mt-3 link">
-        <a href="https://github.com/dashinja" class="mx-1">Miller</a>
-        <a href="https://github.com/smentzer" class="mx-1">Mentzer</a>
-        <a href="https://github.com/danieljudsonblair" class="d-inline mx-1">Blair</a>
-        <span class="ml-0 copyright">
-          &copy;
-        </span>
-
-      </div>
-      <div class="col-sm-6">
-        <div id="edamam-badge" data-color="transparent"></div>
+        <div class="row schRes"></div>
       </div>
     </div>
-  </footer>
+
+    <!-- Footer -->
+    <footer class="footer fixed-bottom text-center bg-dark py-2 mt-5">
+      <div class="row">
+        <div class="col-sm-3 mx-auto mt-3 link">
+          <a href="https://github.com/dashinja" class="mx-1">Miller</a>
+          <a href="https://github.com/smentzer" class="mx-1">Mentzer</a>
+          <a href="https://github.com/danieljudsonblair" class="d-inline mx-1"
+            >Blair</a
+          >
+          <span class="ml-0 copyright"> &copy; </span>
+        </div>
+        <div class="col-sm-6">
+          <div id="edamam-badge" data-color="transparent"></div>
+        </div>
+      </div>
+    </footer>
     <!-- jQuery-->
     <script
       type="text/javascript"
