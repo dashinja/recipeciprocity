@@ -30,8 +30,12 @@ $(document).ready(function() {
   firebase.initializeApp(config);
 
   var database = firebase.database();
+<<<<<<< HEAD
   var recLimit = 10;
   
+=======
+
+>>>>>>> b2283e217a54c302070656cef123803b9282c25e
   // when a child is added to firebase, retrieve the info
   database.ref().limitToLast(recLimit).on('child_added', function(childSnap) {
     // Convenience variables
@@ -151,9 +155,7 @@ $(document).ready(function() {
       console.log(results);
       for (let j = 0; j < results.length; j++) {
         var recDiv = $('<div>');
-        recDiv.addClass(
-          'col-md m-1'
-        );
+        recDiv.addClass('col-md m-1');
         var p = $('<span>').text(results[j].recipe.label);
         p.addClass('text-center d-block mx-auto');
         recImage = $('<img>');
@@ -189,11 +191,16 @@ $(document).ready(function() {
   // Owl Carousel (not bootstrap)
 
   let genericRecipeSearch = [
-    'fried chicken',
-    'grilled asparagus',
+    'chicken',
+    'asparagus',
     'crepes',
     'churros',
-    'tilapia'
+    'tilapia',
+    'cholate chip cookies',
+    'meatloaf',
+    'steak',
+    'salad',
+    'appetizer'
   ];
   let randomizer = Math.floor(Math.random() * 3 + 1);
   let randomSearchChoice = genericRecipeSearch[randomizer];
@@ -202,26 +209,56 @@ $(document).ready(function() {
     var queryURL =
       'https://api.edamam.com/search?q=' +
       randomSearchChoice +
-      '&app_id=1049264d&app_key=ec17d36aa8ef8192fe452b8e3fa1ce52&from=0&to=6';
+      '&app_id=1049264d&app_key=ec17d36aa8ef8192fe452b8e3fa1ce52&from=0&to=11';
 
     $.ajax({
       url: queryURL,
       method: 'GET'
     }).then(function(response) {
       var results = response.hits;
+
+      // Test and choose a normalizer: normalizeTexyByWord combo suggested
+      function normalizeText(text) {
+        if (text.length > 12) {
+          return `${text.substring(0, 20)}...`;
+        } else {
+          return text;
+        }
+      }
+
+      function normalizeTextbyWord(text) {
+        if (text.length > 25) {
+          let normalizer = `${text.substring(0, 20)}`;
+          let normalized = normalizer.substring(
+            0,
+            Math.min(normalizer.length, normalizer.lastIndexOf(' '))
+          );
+          return `${normalized}...`;
+        } else {
+          return text;
+        }
+      }
+
+      function normalizeByWord(text) {
+        let noLongerThan = 30;
+
+        let normalizer = text.substring(0, noLongerThan);
+        console.log('Before:', normalizer);
+        normalizer = normalizer.substring(
+          0,
+          Math.min(normalizer.length, normalizer.lastIndexOf(' '))
+        );
+        console.log('After adjustment:', normalizer);
+        return `${normalizer}...`;
+      }
+
       for (let i = 0; i < results.length; i++) {
-        // let imgHold = $("<img>")
-        // imgHold.attr("data-num", i)
-        // imgHold.attr("src", results[i].recipe.image)
-        // $(".owl-carousel").(imgHold)
-        // $(`data-num${i}`).attr("src", results[i].recipe.image)
         $(`[data-num=${i}]`).attr('src', results[i].recipe.image);
         $(`[data-num=${i}]`).attr('data-link', results[i].recipe.shareAs);
         $(`[data-num=${i}]`).attr('alt', results[i].recipe.label);
-
-        // let holder = `test${i}`
-        // let holder = $(".own-carousel").children("data-num")
-        // console.log("I'm holder:", holder)
+        $(`[data-title=${i}]`)
+          .addClass('text-center d-block mx-auto')
+          .text(normalizeTextbyWord(results[i].recipe.label));
       }
     });
   }
@@ -241,10 +278,26 @@ $(document).ready(function() {
     margin: 10,
     autoplay: true,
     autoplayTimeout: 4000,
-    autoplayHoverPause: true
+    // autoplayHoverPause: true
+    responsiveClass: true,
+    responsive: {
+      0: {
+        items: 1,
+        nav: false
+      },
+      600: {
+        items: 3,
+        nav: false
+      },
+      1000: {
+        items: 5,
+        loop: true
+      }
+    }
   });
+
   $('.play').on('click', function() {
-    owl.trigger('play.owl.autoplay', [1000]);
+    owl.trigger('play.owl.autoplay', [4000]);
   });
   $('.stop').on('click', function() {
     owl.trigger('stop.owl.autoplay');
