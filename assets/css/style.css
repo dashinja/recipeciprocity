@@ -11,6 +11,7 @@ body {
 body {
   background-color: darkgray;
   font-family: 'Permanent Marker', cursive;
+  
 
   /*To help with footer*/
   display: flex;
@@ -105,6 +106,8 @@ a {
 .border {
  border-color:  #4dd0e1 !important;
 }
+
+
 /* media queries */
 @media only screen and (max-width: 425px) {
   .navbar {
