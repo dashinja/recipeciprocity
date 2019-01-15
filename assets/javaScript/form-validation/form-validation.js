@@ -22,25 +22,20 @@ $('#newRecipeBtn').on('click', function(event) {
   var ingred = $('#ingredients-input')
     .val()
     .trim();
-  // var img = $("#newImage").val().trim();
   var dir = $('#directions-input')
     .val()
     .trim();
   var notes = $('#notes-input')
     .val()
     .trim();
-  // timestamp in unix time
-  var recDate = Date.now().valueOf();
-
-  var user = $('#username-input')
+    var user = $('#username-input')
     .val()
     .trim();
-
   var email = $('#email-input')
     .val()
     .trim();
-
-  // Create local temp object
+  var recDate = Date.now().valueOf();
+  
   var newRecipe = {
     Title: rTitle,
     Ingredients: ingred,
@@ -58,7 +53,6 @@ $('#newRecipeBtn').on('click', function(event) {
   // Clear all text-boxes
   $('#title-input').val('');
   $('#ingredients-input').val('');
-  // $("#newImage").val("");
   $('#directions-input').val('');
   $('#notes-input').val('');
   $('#username-input').val('');
