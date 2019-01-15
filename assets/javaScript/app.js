@@ -30,7 +30,8 @@ $(document).ready(function() {
   firebase.initializeApp(config);
 
   var database = firebase.database();
-
+ 
+  
   // when a child is added to firebase, retrieve the info
   database.ref().on('child_added', function(childSnap) {
     // Convenience variables
@@ -38,7 +39,8 @@ $(document).ready(function() {
     var recIngred = childSnap.val().Ingredients;
     var recDirec = childSnap.val().Directions;
     var recNotes = childSnap.val().Notes;
-    var rec_date = childSnap.val().SubDate;
+    // timestamp is converted to browser local time
+    var rec_date = moment(childSnap.val().SubDate).format('LLL');
     var recUser = childSnap.val().User;
     var recKey = childSnap.key;
     let recNum = childSnap.val().Num;

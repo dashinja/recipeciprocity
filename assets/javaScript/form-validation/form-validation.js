@@ -29,7 +29,8 @@ $('#newRecipeBtn').on('click', function(event) {
   var notes = $('#notes-input')
     .val()
     .trim();
-  var recDate = moment().format('LLL');
+  // timestamp in unix time
+  var recDate = Date.now().valueOf();
 
   var user = $('#username-input')
     .val()
