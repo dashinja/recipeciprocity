@@ -79,6 +79,9 @@ a {
   text-decoration: none;
   filter: drop-shadow(0 0 0.75rem black);
 }
+.blerb {
+  margin-left: 20px;
+}
 
 /* recipe nav bar */
 .recipes {
@@ -124,7 +127,5 @@ a {
   .footer {
     overflow-x: hidden !important;
   } 
-  .about {
-    display: inline;
-  }
+
 }
