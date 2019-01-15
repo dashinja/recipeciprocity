@@ -34,11 +34,11 @@
       <nav class="navbar navbar-inverse">
         <div class="container-fluid">
           <div class="navbar-header mx-md-auto">
-            <a class="navbar-brand logo" href="index.html"
-              >Recipeciprocity</a
-            >
+            <a class="navbar-brand logo" href="index.html">Recipeciprocity</a>
           </div>
-          <ul class="nav navbar-nav navbar-right mx-md-auto mr-5 pr-5 d-flex align-self-end">
+          <ul
+            class="nav navbar-nav navbar-right mx-md-auto mr-5 pr-5 d-flex align-self-end"
+          >
             <li><a href="recipes.html">Recipes</a></li>
             <li><a href="submissions.html">Submit Recipes</a></li>
           </ul>
@@ -53,7 +53,7 @@
           <!--Recipe Form Input-->
           <div class="form-holder">
             <p class="instruction">* Required Field</p>
-            <form>
+            <form class="form toggle-disabled" action="">
               <!--Title-->
               <div class="form-group">
                 <label class for="title-input">Title*</label>
@@ -122,11 +122,10 @@
                   class="form-control parseForm"
                   id="email-input"
                   data-validation="email"
-                  data-validation-help="Sample: username@hosting.com"
-                  data-suggestions="username@website.io"
+                  data-validation-help="Sample: username@website.io"
                 />
               </div>
-              <button id="newRecipeBtn">Submit</button>
+              <input type="submit" id="newRecipeBtn" value="Submit" />
             </form>
           </div>
         </main>
@@ -149,7 +148,7 @@
       src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"
     ></script>
     <!--jQuery Form Validator-->
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.3.26/jquery.form-validator.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.3.26/jquery.form-validator.min.js"></script>
     <!-- javaScript -->
     <script
       type="text/javascript"

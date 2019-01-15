@@ -67,6 +67,8 @@ $('#newRecipeBtn').on('click', function(event) {
 
 // Form Validation Activator
 $.validate({
-  lang: 'en',
+  modules: 'toggleDisabled',
+  disabledFormFilter: 'form.toggle-disabled',
+  showErrorDialogs: false,
   validateOnBlur: true
 });

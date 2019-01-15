@@ -1,17 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Recipeciprocity</title>
+    <!-- bootstrap -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+      integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+      crossorigin="anonymous"
+    />
+    <!--Owl Carousel-->
+    <link
+      rel="stylesheet"
+      href="./assets/javaScript/owlcarousel/assets/owl.carousel.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="./assets/javaScript/owlcarousel/assets/owl.theme.default.min.css"
+    />
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <title>Recipeciprocity</title>
-  <!-- bootstrap -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
-    crossorigin="anonymous" />
-  <!--Owl Carousel-->
-  <link rel="stylesheet" href="./assets/javaScript/owlcarousel/assets/owl.carousel.min.css" />
-  <link rel="stylesheet" href="./assets/javaScript/owlcarousel/assets/owl.theme.default.min.css" />
 
   <!--fonts-->
   <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet" />
@@ -41,35 +51,70 @@
         </ul>
       </div>
     </nav>
+   
   </header>
-  <!--This content div helps footer work-->
-  <div class="content">
-    <!-- pageBody-->
-    <div class="class container">
-      <div class="row">
-        <div class="col-md-6">
-          <!-- carousel -->
-          <div class="owl-carousel" id="owl-generator">
-            <img src="" alt="" class="owl-image" data-num="1" />
-            <img src="" alt="" class="owl-image" data-num="2" />
-            <img src="" alt="" class="owl-image" data-num="3" />
-            <img src="" alt="" class="owl-image" data-num="4" />
-            <img src="" alt="" class="owl-image" data-num="5" />
-          </div>
-          <div class="button-container container">
-            <div class="button-holder row justify-content-center">
-              <a class="button secondary play mx-2 border p-3">Play</a>
-              <a class="button secondary stop mx-2 border p-3">Stop</a>
+    <!--This content div helps footer work-->
+    <div class="content">
+      <!-- pageBody-->
+      <div class="class container">
+        <div class="row">
+          <div class="col-md-6">
+            <!-- carousel -->
+            <div class="title-line text-center mb-1">
+              <h3>Featured Ingredient for Your Visit</h3>
+            </div>
+            <div class="title-line text-center mb-2">Click for more info</div>
+            <div class="owl-carousel" id="owl-generator">
+              <div class="img-holder">
+                <img src="" alt="" class="owl-image rounded" data-num="1" />
+                <span class="spanner" data-title="1"></span>
+              </div>
+              <div class="img-holder">
+                <img src="" alt="" class="owl-image rounded" data-num="2" />
+                <span class="spanner" data-title="2"></span>
+              </div>
+              <div class="img-holder">
+                <img src="" alt="" class="owl-image rounded" data-num="3" />
+                <span class="spanner" data-title="3"></span>
+              </div>
+              <div class="img-holder">
+                <img src="" alt="" class="owl-image rounded" data-num="4" />
+                <span class="spanner" data-title="4"></span>
+              </div>
+              <div class="img-holder">
+                <img src="" alt="" class="owl-image rounded" data-num="5" />
+                <span class="spanner" data-title="5"></span>
+              </div>
+              <div class="img-holder">
+                <img src="" alt="" class="owl-image rounded" data-num="6" />
+                <span class="spanner" data-title="6"></span>
+              </div>
+              <div class="img-holder">
+                <img src="" alt="" class="owl-image rounded" data-num="7" />
+                <span class="spanner" data-title="7"></span>
+              </div>
+              <div class="img-holder">
+                <img src="" alt="" class="owl-image rounded" data-num="8" />
+                <span class="spanner" data-title="8"></span>
+              </div>
+              <div class="img-holder">
+                <img src="" alt="" class="owl-image rounded" data-num="9" />
+                <span class="spanner" data-title="9"></span>
+              </div>
+              <div class="img-holder">
+                <img src="" alt="" class="owl-image rounded" data-num="10" />
+                <span class="spanner" data-title="10"></span>
+              </div>
+            </div>
+            <div class="button-container container mb-3">
+              <div class="button-holder row justify-content-center">
+                <a class="button secondary play mx-2 border p-3">Play</a>
+                <a class="button secondary stop mx-2 border p-3">Stop</a>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="col-md-2">
-          <!--placeholder-->
-        </div>
-
-
-
-        <div class="col-md-4">
+          <div class="col-md-2"><!--placeholder--></div>
+          <div class="col-md-4">
 
           <!--Search Edamam Bar: Emamam Search + Steph Search Merge-->
           <div class="form active-cyan-3 active-cyan-4 mb-4 search">
@@ -77,58 +122,54 @@
             <input type="text" class="form-control parseForm" id="searchEdamam-input" data-validation="alphanumeric"
               placeholder="Recipes or Ingredients" aria-label="Search" />
             <button id="schEda">Search</button>
+            
           </div>
           <div class="row">
-            <div class="col-md-12">
+            <div class="col-sm-12">
               <h1 class="text-center">About Us:</h1>
-            </div>
-            <div class="row text-center w-100">
-              <p>
-                Recipeciprocity (REH-suh-PEE-suh-PRAH-suh-TEE) is a community where users can search for and share
-                their delicious recipes with the world!
-              </p>
-              <ul>
-                <li>Stephanie </li>
-                <li>Byron</li>
-                <li>Dan are passionate about cooking, coding, waxing philosophic, and playing Rock n' Roll</li>
-              </ul>
 
+              <div class="row text-center wrap">
+                <p class="blerb">
+                  Recipeciprocity (REH-suh-PEE-suh-PRAH-suh-TEE) <br> is a community where users can search for <br> delicious recipes and share <br>
+                  their passion and with the world!
+                </p>
+                <ul>
+              </div>
             </div>
           </div>
         </div>
-      </div>
+        </div>
 
-      <div class="row schRes"></div>
-    </div>
-  </div>
-  </div>
-
-
-  <!-- Footer -->
-  <footer class="footer fixed-bottom text-center bg-dark py-2 mt-5">
-    <div class="row">
-      <div class="col-sm-3 mx-auto mt-3 link">
-        <a href="https://github.com/dashinja" class="mx-1">Miller</a>
-        <a href="https://github.com/smentzer" class="mx-1">Mentzer</a>
-        <a href="https://github.com/danieljudsonblair" class="d-inline mx-1">Blair</a>
-        <span class="ml-0 copyright">
-          &copy;
-        </span>
-
-      </div>
-      <div class="col-sm-6">
-        <div id="edamam-badge" data-color="transparent"></div>
+        <div class="row schRes"></div>
       </div>
     </div>
-  </footer>
-  <!-- jQuery-->
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <!--Owl Carousel-->
-  <script src="./assets/javaScript/owlcarousel/owl.carousel.min.js"></script>
-  <!-- javaScript -->
-  <script type="text/javascript" src="assets/javaScript/app.js"></script>
-  <!-- Moment.js Reference -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
-</body>
 
+    <!-- Footer -->
+    <footer class="footer fixed-bottom text-center bg-dark py-2 mt-5">
+      <div class="row">
+        <div class="col-sm-3 mx-auto mt-3 link">
+          <a href="https://github.com/dashinja" class="mx-1">Miller</a>
+          <a href="https://github.com/smentzer" class="mx-1">Mentzer</a>
+          <a href="https://github.com/danieljudsonblair" class="d-inline mx-1"
+            >Blair</a
+          >
+          <span class="ml-0 copyright"> &copy; </span>
+        </div>
+        <div class="col-sm-6">
+          <div id="edamam-badge" data-color="transparent"></div>
+        </div>
+      </div>
+    </footer>
+    <!-- jQuery-->
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"
+    ></script>
+    <!--Owl Carousel-->
+    <script src="./assets/javaScript/owlcarousel/owl.carousel.min.js"></script>
+    <!-- javaScript -->
+    <script type="text/javascript" src="assets/javaScript/app.js"></script>
+    <!-- Moment.js Reference -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
+  </body>
 </html>

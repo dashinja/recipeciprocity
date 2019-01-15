@@ -12,6 +12,7 @@ body {
   background-color: darkgray;
   font-family: 'Permanent Marker', cursive;
   
+  
 
   /*To help with footer*/
   display: flex;
@@ -36,6 +37,10 @@ body {
   filter: drop-shadow(0 0 0.75rem black);
 }
 
+/* img-holder {
+  filter: drop-shadow(10 10 0.75rem black);
+} */
+
 .footer {
   bottom: 0;
   width: 100%;
@@ -48,8 +53,8 @@ body {
   border-top: 1px solid #4dd0e1;
   /* overflow: hidden; */
 }
-.copyright{
- color:  #ffffe0;
+.copyright {
+  color: #ffffe0;
 }
 /* homepage nav bar */
 .navbar {
@@ -78,6 +83,9 @@ a {
   text-decoration: none;
   filter: drop-shadow(0 0 0.75rem black);
 }
+.blerb {
+  margin-left: 20px;
+}
 
 /* recipe nav bar */
 .recipes {
@@ -85,8 +93,8 @@ a {
   padding: 340px 140px 0;
 }
 .submissionForm {
-    margin-top: 40px;
-    margin-bottom: 40px;
+  margin-top: 40px;
+  margin-bottom: 40px;
 }
 
 .carousel {
@@ -104,7 +112,7 @@ a {
 }
 
 .border {
- border-color:  #4dd0e1 !important;
+  border-color: #4dd0e1 !important;
 }
 
 
@@ -112,16 +120,16 @@ a {
 @media only screen and (max-width: 425px) {
   .navbar {
     padding: 0;
-    font-size: .5rem;
+    font-size: 0.5rem;
   }
   .navbar-brand {
     font-size: 2.15rem;
   }
-.link {
-  text-align: center !important;
-}
-body {
-  overflow-x: hidden !important;
-}
+  .link {
+    text-align: center !important;
+  }
+  .footer {
+    overflow-x: hidden !important;
+  } 
 
 }
