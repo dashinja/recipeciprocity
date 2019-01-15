@@ -1,5 +1,4 @@
-
-$(document).ready(function () {
+$(document).ready(function() {
   var config = {
     apiKey: 'AIzaSyDDO32RIhsljwPbk3zu5WSBN2WEmEkKNF8',
     authDomain: 'recipeciprocity.firebaseapp.com',
@@ -13,31 +12,98 @@ $(document).ready(function () {
 
   var recLimit = 10;
 
+  function showMore() {
+    $('#newRecipe').empty();
 
-  database.ref().limitToLast(recLimit).on('child_added', function (childSnap) {
+    recLimit += 10;
 
-    var recTitle = childSnap.val().Title;
-    var recIngred = childSnap.val().Ingredients;
-    var recDirec = childSnap.val().Directions;
-    var recNotes = childSnap.val().Notes;
-    // timestamp is converted from unix to browser local time
-    var rec_date = moment(childSnap.val().SubDate).format('LLL');
-    var recUser = childSnap.val().User;
-    var recKey = childSnap.key;
-    let recNum = childSnap.val().Num;
+    database
+      .ref()
+      .limitToLast(recLimit)
+      .on('child_added', function(childSnap) {
+        var recTitle = childSnap.val().Title;
+        var recIngred = childSnap.val().Ingredients;
+        var recDirec = childSnap.val().Directions;
+        var recNotes = childSnap.val().Notes;
+        // timestamp is converted from unix to browser local time
+        var rec_date = moment(childSnap.val().SubDate).format('LLL');
+        var recUser = childSnap.val().User;
+        var recKey = childSnap.key;
+        let recNum = childSnap.val().Num;
 
-    //Show notes content or Show N/A
-    let conditionalText = function () {
-      if (recNotes === '') {
-        recNotes = 'N/A';
-        return recNotes;
-      } else {
-        return recNotes;
-      }
-    };
+        //Show notes content or Show N/A
+        let conditionalText = function() {
+          if (recNotes === '') {
+            recNotes = 'N/A';
+            return recNotes;
+          } else {
+            return recNotes;
+          }
+        };
 
-    let newRec = $('#newRecipe');
-    let recipeCard = $(`
+        let newRec = $('#newRecipe');
+        let recipeCard = $(`
+    <div class="card card-identity text-center mt-5">
+      <div class="card-header title">
+        <!--Title-->
+          <h1 class="display-4 title-text">
+            ${recTitle}
+          </h1>
+        </div>
+        <div class="card-body w-50 mx-auto">
+        <!--Ingredients-->
+          <h3 class="card-ingredients ingredients font-weight-bold mb-1">Ingredients:</h3>
+          <p class="mt-2 mb-3 ingredients-text" id="ingredients-shown">${recIngred}</p>
+        <!--Directions-->
+        <div class="direction-container">
+          <h3 class="card-directions directions font-weight-bold mb-1 mt-4">Directions:</h3>
+          <p class="mt-2 mb-3 directions-text" id="directions-shown">${recDirec}</p>
+        </div>
+        <!--Notes-->
+          <h3 class="card-title notes font-weight-bold mb-1 mt-4">Notes:</h3>
+          <p class="mt-2 mb-3 notes-text" id="notes-shown">${conditionalText()}</p>
+        <!--Username-->
+          <h3 class="card-title username font-weight-bold mb-1 mt-4">Posted by:</h3>
+          <p class="mt-2 mb-3 username-text" id="username-shown">${recUser}</p>
+          <!--Talking Button-->
+          <a href="#" class="btn btn-primary mt-0 btn-voice" id="readText" data-num="${recNum}" data-key="${recKey}" data-title="${recTitle}" data-ingredients="${recIngred}" data-directions="${recDirec}" data-notes="${recNotes}" data-username="${recUser}">Speak Directions</a>
+        </div>
+        <div class="card-footer text-muted">${rec_date}</div>
+      </div>
+    </div>
+    `);
+        newRec.prepend(recipeCard);
+      });
+  }
+
+  $('#btn-more').on('click', showMore);
+
+  database
+    .ref()
+    .limitToLast(recLimit)
+    .on('child_added', function(childSnap) {
+      var recTitle = childSnap.val().Title;
+      var recIngred = childSnap.val().Ingredients;
+      var recDirec = childSnap.val().Directions;
+      var recNotes = childSnap.val().Notes;
+      // timestamp is converted from unix to browser local time
+      var rec_date = moment(childSnap.val().SubDate).format('LLL');
+      var recUser = childSnap.val().User;
+      var recKey = childSnap.key;
+      let recNum = childSnap.val().Num;
+
+      //Show notes content or Show N/A
+      let conditionalText = function() {
+        if (recNotes === '') {
+          recNotes = 'N/A';
+          return recNotes;
+        } else {
+          return recNotes;
+        }
+      };
+
+      let newRec = $('#newRecipe');
+      let recipeCard = $(`
     <div class="card card-identity text-center mt-5">
       <div class="card-header title">
         <!--Title-->
@@ -68,17 +134,17 @@ $(document).ready(function () {
     </div>
     `);
 
-    newRec.prepend(recipeCard);
-  });
+      newRec.prepend(recipeCard);
+    });
 
   //Responsive Voice Section
   let speak = {
-    and: function (text) {
+    and: function(text) {
       responsiveVoice.speak(text);
     }
   };
 
-  $('.card-holder').on('click', '.btn-voice', function (event) {
+  $('.card-holder').on('click', '.btn-voice', function(event) {
     event.preventDefault();
     let sayTitle = $(this).attr('data-title');
     let sayIngred = $(this).attr('data-ingredients');
@@ -89,7 +155,6 @@ $(document).ready(function () {
     speak.and(sayTitle);
     speak.and(sayIngred);
     speak.and(sayDirec);
-
 
     function conditionalNote() {
       if (sayNotes === 'N/A') {
@@ -104,7 +169,7 @@ $(document).ready(function () {
   });
 
   // Edamam Search (index page)
-  $('#schEda').on('click keypress', function (e) {
+  $('#schEda').on('click keypress', function(e) {
     var rand = Math.floor(Math.random() * 100) + 1;
     var randb = rand + 12;
     var schEdaIng = $('#searchEdamam-input')
@@ -126,7 +191,7 @@ $(document).ready(function () {
     $.ajax({
       url: queryURL,
       method: 'GET'
-    }).then(function (response) {
+    }).then(function(response) {
       var results = response.hits;
 
       for (let j = 0; j < results.length; j++) {
@@ -150,17 +215,15 @@ $(document).ready(function () {
     });
   });
 
-
-  $('input#searchEdamam-input').on('keypress', function (e) {
+  $('input#searchEdamam-input').on('keypress', function(e) {
     if (e.which === 13) {
       $('#schEda').trigger('click');
     }
   });
 
-  $('.schRes').on('click', 'img', function () {
+  $('.schRes').on('click', 'img', function() {
     window.open($(this).attr('data-link'));
   });
-
 
   // Owl Carousel (not bootstrap)
 
@@ -188,9 +251,8 @@ $(document).ready(function () {
     $.ajax({
       url: queryURL,
       method: 'GET'
-    }).then(function (response) {
+    }).then(function(response) {
       var results = response.hits;
-
 
       function normalizeTextbyWord(text) {
         if (text.length > 25) {
@@ -204,7 +266,6 @@ $(document).ready(function () {
           return text;
         }
       }
-
 
       for (let i = 0; i < results.length; i++) {
         $(`[data-num=${i}]`).attr('src', results[i].recipe.image);
@@ -220,9 +281,7 @@ $(document).ready(function () {
   populateCarousel();
 
   function carouselClick() {
-
     window.open($(this).attr('data-link'));
-
   }
 
   var owl = $('.owl-carousel');
@@ -250,10 +309,10 @@ $(document).ready(function () {
     }
   });
 
-  $('.play').on('click', function () {
+  $('.play').on('click', function() {
     owl.trigger('play.owl.autoplay', [4000]);
   });
-  $('.stop').on('click', function () {
+  $('.stop').on('click', function() {
     owl.trigger('stop.owl.autoplay');
   });
 
