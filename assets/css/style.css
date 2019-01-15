@@ -11,8 +11,6 @@ body {
 body {
   background-color: darkgray;
   font-family: 'Permanent Marker', cursive;
-  
-  
 
   /*To help with footer*/
   display: flex;
@@ -115,6 +113,9 @@ a {
   border-color: #4dd0e1 !important;
 }
 
+.submitResponse#submitSuccess {
+  font-size: 26px;
+}
 
 /* media queries */
 @media only screen and (max-width: 425px) {
@@ -130,21 +131,20 @@ a {
   }
   .footer {
     overflow-x: hidden !important;
-  } 
-
+  }
 }
 
-@media only screen and (max-width: 768px){
-.logo {
-  font-size: 2rem;
-}
-.links {
-  font-size: 1.5rem;
-}
-.navbar {
-  text-align: center !important;
-}
-.link {
-  margin-bottom: 10px;
-}
+@media only screen and (max-width: 768px) {
+  .logo {
+    font-size: 2rem;
+  }
+  .links {
+    font-size: 1.5rem;
+  }
+  .navbar {
+    text-align: center !important;
+  }
+  .link {
+    margin-bottom: 10px;
+  }
 }

@@ -11,6 +11,8 @@ firebase.initializeApp(config);
 var database = firebase.database();
 let recipeNum = 0;
 
+$('.submitResponse#submitSuccess').fadeToggle();
+
 $('#newRecipeBtn').on('click', function(event) {
   event.preventDefault();
 
@@ -28,14 +30,14 @@ $('#newRecipeBtn').on('click', function(event) {
   var notes = $('#notes-input')
     .val()
     .trim();
-    var user = $('#username-input')
+  var user = $('#username-input')
     .val()
     .trim();
   var email = $('#email-input')
     .val()
     .trim();
   var recDate = Date.now().valueOf();
-  
+
   var newRecipe = {
     Title: rTitle,
     Ingredients: ingred,
@@ -57,6 +59,9 @@ $('#newRecipeBtn').on('click', function(event) {
   $('#notes-input').val('');
   $('#username-input').val('');
   $('#email-input').val('');
+
+  // Confirm User Submission
+  $('.submitResponse#submitSuccess').fadeToggle();
 });
 
 // Form Validation Activator
