@@ -133,3 +133,18 @@ a {
   } 
 
 }
+
+@media only screen and (max-width: 768px){
+.logo {
+  font-size: 2rem;
+}
+.links {
+  font-size: 1.5rem;
+}
+.navbar {
+  text-align: center !important;
+}
+.link {
+  margin-bottom: 10px;
+}
+}
