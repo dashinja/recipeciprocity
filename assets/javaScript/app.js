@@ -191,11 +191,11 @@ $(document).ready(function() {
     'crepes',
     'churros',
     'tilapia',
-    "cholate chip cookies",
-    "meatloaf",
-    "steak",
-    "salad",
-    "appetizer"
+    'cholate chip cookies',
+    'meatloaf',
+    'steak',
+    'salad',
+    'appetizer'
   ];
   let randomizer = Math.floor(Math.random() * 3 + 1);
   let randomSearchChoice = genericRecipeSearch[randomizer];
@@ -212,9 +212,23 @@ $(document).ready(function() {
     }).then(function(response) {
       var results = response.hits;
 
+      // Test and choose a normalizer: normalizeTexyByWord combo suggested
       function normalizeText(text) {
         if (text.length > 12) {
           return `${text.substring(0, 20)}...`;
+        } else {
+          return text;
+        }
+      }
+
+      function normalizeTextbyWord(text) {
+        if (text.length > 25) {
+          let normalizer = `${text.substring(0, 20)}`;
+          let normalized = normalizer.substring(
+            0,
+            Math.min(normalizer.length, normalizer.lastIndexOf(' '))
+          );
+          return `${normalized}...`;
         } else {
           return text;
         }
@@ -232,24 +246,14 @@ $(document).ready(function() {
         console.log('After adjustment:', normalizer);
         return `${normalizer}...`;
       }
-      /*
-var yourString = "The quick brown fox jumps over the lazy dog"; //replace with your string.
-var maxLength = 6 // maximum number of characters to extract
 
-//trim the string to the maximum length
-var trimmedString = yourString.substr(0, maxLength);
-
-//re-trim if we are in the middle of a word
-trimmedString = trimmedString.substr(0, Math.min(trimmedString.length, trimmedString.lastIndexOf(" ")))
-
-*/
       for (let i = 0; i < results.length; i++) {
         $(`[data-num=${i}]`).attr('src', results[i].recipe.image);
         $(`[data-num=${i}]`).attr('data-link', results[i].recipe.shareAs);
         $(`[data-num=${i}]`).attr('alt', results[i].recipe.label);
         $(`[data-title=${i}]`)
           .addClass('text-center d-block mx-auto')
-          .text(normalizeByWord(results[i].recipe.label));
+          .text(normalizeTextbyWord(results[i].recipe.label));
       }
     });
   }
@@ -282,7 +286,7 @@ trimmedString = trimmedString.substr(0, Math.min(trimmedString.length, trimmedSt
       },
       1000: {
         items: 5,
-        loop: false
+        loop: true
       }
     }
   });
