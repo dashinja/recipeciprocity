@@ -30,12 +30,8 @@ $(document).ready(function() {
   firebase.initializeApp(config);
 
   var database = firebase.database();
-<<<<<<< HEAD
   var recLimit = 10;
   
-=======
-
->>>>>>> b2283e217a54c302070656cef123803b9282c25e
   // when a child is added to firebase, retrieve the info
   database.ref().limitToLast(recLimit).on('child_added', function(childSnap) {
     // Convenience variables
