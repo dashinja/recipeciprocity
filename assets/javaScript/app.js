@@ -20,6 +20,7 @@ $(document).ready(function () {
     var recIngred = childSnap.val().Ingredients;
     var recDirec = childSnap.val().Directions;
     var recNotes = childSnap.val().Notes;
+    // timestamp is converted from unix to browser local time
     var rec_date = moment(childSnap.val().SubDate).format('LLL');
     var recUser = childSnap.val().User;
     var recKey = childSnap.key;
@@ -190,13 +191,6 @@ $(document).ready(function () {
     }).then(function (response) {
       var results = response.hits;
 
-      function normalizeText(text) {
-        if (text.length > 12) {
-          return `${text.substring(0, 20)}...`;
-        } else {
-          return text;
-        }
-      }
 
       function normalizeTextbyWord(text) {
         if (text.length > 25) {
@@ -211,16 +205,6 @@ $(document).ready(function () {
         }
       }
 
-      function normalizeByWord(text) {
-        let noLongerThan = 30;
-        let normalizer = text.substring(0, noLongerThan);
-
-        normalizer = normalizer.substring(
-          0,
-          Math.min(normalizer.length, normalizer.lastIndexOf(' '))
-        );
-        return `${normalizer}...`;
-      }
 
       for (let i = 0; i < results.length; i++) {
         $(`[data-num=${i}]`).attr('src', results[i].recipe.image);
