@@ -47,11 +47,10 @@
     </header>
     <!--This content div helps footer work-->
     <div class="content">
-      <!-- recipe card -->
       <div class="container submissionForm">
         <main class="w-100">
           <!--Recipe Form Input-->
-          <div class="form-holder">
+          <div class="form-holder" id="submitSuccess">
             <p class="instruction">* Required Field</p>
             <form class="form toggle-disabled" action="">
               <!--Title-->
@@ -126,6 +125,9 @@
                 />
               </div>
               <input type="submit" id="newRecipeBtn" value="Submit" />
+              <p class="mt-2 submitResponse" id="submitSuccess">
+                Thanks for your submission!
+              </p>
             </form>
           </div>
         </main>
