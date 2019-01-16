@@ -76,7 +76,7 @@ $(document).ready(function() {
         // Load window on repopulation at previous #btn-more location
         // Always goes to position of newest "not seen before" card
         window.location =
-          'file:///C:/Users/Kirisutokyoo-Shinja/Desktop/projects/recipeciprocity/recipes.html#btn-more';
+          'https://dashinja.github.io/recipeciprocity/recipes.html#btn-more';
         newRec.prepend(recipeCard);
       });
   }
