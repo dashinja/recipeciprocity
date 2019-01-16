@@ -72,6 +72,11 @@ $(document).ready(function() {
       </div>
     </div>
     `);
+
+        // Load window on repopulation at previous #btn-more location
+        // Always goes to position of newest "not seen before" card
+        window.location =
+          'https://dashinja.github.io/recipeciprocity/recipes.html#btn-more';
         newRec.prepend(recipeCard);
       });
   }
